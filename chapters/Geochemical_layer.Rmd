@@ -1,0 +1,119 @@
+---
+title: "Soil Geochemistry Spatial Database - General Description"
+
+date: "`r Sys.Date()`"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style>
+   tbody tr:nth-child(odd){
+    background-color: #F7FBFF;
+  }
+</style>
+
+
+Laboratory data were produced by the USDA-NRCS Kellogg Soil Survey Laboratory, located in the National Soil Survey Center, Lincoln, NE. The National Cooperative Soil Survey (NCSS) Soil Characterization Database contains the analytical results from the Kellogg Soil Survey Laboratory (KSSL) at the National Soil Survey Center (NSSC) in Lincoln, Nebraska, as well as the results from numerous cooperating State university laboratories in the United States. Properties measured in the laboratory serve as the basis for interpretations related to soil use and management. Standardized methodologies and procedures used in the laboratory are contained in the Kellogg Soil Survey Laboratory Methods Manual, Soil Survey Investigations Report (SSIR) No. 42 (by the Soil Survey Staff). The KSSL data are provided in reports (for example, Primary and Supplementary Characterization Data Sheets.) 
+
+The database includes pedons that represent the central concept of a soil series, pedons that represent the central concept of a map unit but not of a series, and pedons sampled to bracket a range of properties within a series or landscape. Not all analyses are conducted for every soil. Suites of analytical procedures are run based upon anticipated or known conditions regarding the nature of the soil being analyzed. Results are reported in tiers. For example, soils of arid environments are routinely analyzed for salts and carbonates as part of the standard analysis suite.
+
+## The geographic display consists of two major sets of geochemistry data:
+
+Current Geochemistry Project — The Soil Geochemistry Spatial Dataset is a collection of soil geochemistry data produced by the U.S. Department of Agriculture, Natural Resources Conservation Service, Kellogg Soil Survey Laboratory in Lincoln, Nebraska. The website is ongoing and updated periodically to reflect additional available data. Soil pedons were sampled and analyzed by horizons. Pedons represent either the central concept of a soil series, the central concept of a map unit, or unspecified sites on a project specific basis. Sites are indentified as either contaminated or non-contaminated (cited as “unknown”) based on knowledge of land use history. When labeled as “unknown”, it suggests the elemental concentrations represent native values. These data are represented in four layers: Site Info, Major Elements, Trace Elements, and Selected Characterization Data. Data in Major Element and Trace Element tiers are defined by specific digestion. Digestion method for elements in the “Major Elements” tier consists of an acid combination of HF+HNO3+HCL. Elements in the “Trace Elements” tier are recovered from soil with a HNO3+HCL digestion. Elemental data are incomplete on certain samples. Additional elements have been added to the analytical suite over time and certain data are absent on earlier projects. Also, certain projects were specific for only major or trace elements.
+
+Currently, the dataset contains data for over 4,800 sites. Each point or location on the map represents one or more pedons. Data for pedons generally include multiple horizons listed sequentially in a tabular format. Each location has four types of data associated: site, trace element, major element, and characterization data. For certain sites, only trace or major elemental data may be available. 
+
+The Soil Geochemistry Spatial Dataset contains data collectively produced by the National Cooperative Soil Survey Program. Sites were generally selected and sampled by soil survey personnel in respective states. Laboratory data were produced by the U.S. Department of Agriculture, Natural Resources Conservation Service, Kellogg Soil Survey Laboratory, located in the National Soil Survey Center, Lincoln, Nebraska.
+
+## Summary and analysis of these data are documented in:
+
+Burt, R., M.A. Wilson, M.D. Mays, and C.W. Lee. 2003. Major and Trace Elements of Selected Pedons in the U.S. J. of Environ. Qual. 32:2109-2121.
+
+Wilson, M.A., R. Burt, S.J. Indorante, A.B. Jenkins, J.V. Chiaretti, M.G. Ulmer, J.M. Scheyer. 2008. Geochemistry in the modern soil survey program. Environmental Monitoring and Assessment. 139:151–171.
+
+For detailed information on Kellogg Soil Survey Laboratory (KSSL) methods (e.g., procedures, interferences), refer to “Soil Survey Laboratory Investigations Report No. 42”.
+
+For information on the applications of laboratory data, refer to “Soil Survey Laboratory Investigations Report No. 45”.
+
+For the complete characterization data dataset, pedon and site information, additional qualifications and limitations on the regarding characterization data, refer to the National Cooperative Soil Survey Soil Characterization Database at https://ncsslabdatamart.sc.egov.usda.gov.
+
+Locations of each site are identified as either “Geographic”, a known location identified by latitude and longitude or “Centroid”, the location is unknown within county and the point on the map is located at the latitude and longitude of the county centroid. Note that locations in the past were recorded only as latitude and longitude in the Soil Survey Laboratory Characterization Database. Therefore, georeference locations for sites can be considered only approximate unless the map datum (NAD27 or WGS84) can be indentified for each point. It can be assumed that data prior to 1990 was recorded from maps with a NAD27 datum and with a WGS84 datum after 1995.
+ 
+
+2. Holmgren Dataset — A second group of data was produced by the Soil Survey Laboratory during the 1970’s and 1980’s for a project documenting the content of selected trace elements in agricultural soils of the U.S. This dataset contains over 3,400 sites in conterminous U.S. These data are available as a separate spatial layer on a county centroid basis.
+
+These data are discussed in:
+
+Holmgren, G.G.S., M.W. Meyer, R.L. Chaney, and R.B. Daniels. 1993. Cadmium, lead, zinc, copper, and nickel in agricultural soils in the United States of America. J. Environ. Qual. 22:335-348.
+
+Use Constraints
+You are most WELCOME to use the database, but you should be aware that the assessment of the accuracy and applicability is strictly a USER RESPONSIBILITY and the NRCS and NCSS take no responsibility for problems that arise from use of these data.
+
+The U.S. Department of Agriculture, Natural Resources Conservation Service and the National Cooperative Soil Survey, should be acknowledged as the data source in products derived from these data.
+
+This dataset is not designed for use as a primary regulatory tool in permitting or citing decisions, but may be used as a reference source. This is public information and may be interpreted by organizations, agencies, units of government, or others based on needs; however, they are responsible for the appropriate application. Federal, State, or local regulatory bodies are not to reassign to the Natural Resources Conservation Service or the National Cooperative Soil Survey any authority for the decisions that they make. The Natural Resources Conservation Service will not perform any evaluations of these data for purposes related solely to State or local regulatory programs.
+
+Digital data files are periodically updated. Files are dated, and users are responsible for obtaining the latest version of the data.
+
+## Soil Data Access SQL Brekdown
+
+Enter State Abbreviation i.e. WI
+```{SQL}
+~DeclareChar(@state_sym ,20)~  
+
+SELECT @state_sym= 'WI' 
+
+```
+
+
+
+
+####  Insert identifier(s) string and WKT geometry for each area of interest (AOI) polygon
+
+```{SQL}
+SELECT @aoiGeom = GEOMETRY::STGeomFromText('MULTIPOLYGON (((-102.12335160658608 45.959173206572416, -102.13402890980223 45.959218442561564, -102.13386921506947 45.944643788188387, -102.12327175652177 45.944703605814198, -102.12335160658608 45.959173206572416)))', 4326);   
+SELECT @aoiGeomFixed = @aoiGeom.MakeValid().STUnion(@aoiGeom.STStartPoint());  
+INSERT INTO #AoiTable ( landunit, aoigeom )  
+VALUES ('T9981 Fld3', @aoiGeomFixed); 
+SELECT @aoiGeom = GEOMETRY::STGeomFromText('MULTIPOLYGON (((-102.1130336443976 45.959162795100383, -102.12335160658608 45.959173206572416, -102.12327175652177 45.944703605814198, -102.1128892282776 45.944710506326032, -102.1130336443976 45.959162795100383)))', 4326);   
+SELECT @aoiGeomFixed = @aoiGeom.MakeValid().STUnion(@aoiGeom.STStartPoint());  
+INSERT INTO #AoiTable ( landunit, aoigeom )  
+VALUES ('T9981 Fld4', @aoiGeomFixed);
+```
+
+## Soil SQL Script Breakdown
+
+|aoiid	|landunit|	aoigeom|
+|------|-------------|---------------------------------------------------------------------------------------|
+|1	|T9981 Fld3	|POLYGON ((-102.13386921506947 45.944643788188387, -102.12327175652177 45.9447036058142, -102.12335160658608 45.959173206572416, -102.13402890980223 45.959218442561564, -102.13386921506947 45.944643788188387))|
+|2	|T9981 Fld4|	POLYGON ((-102.12327175652177 45.9447036058142, -102.1128892282776 45.944710506326032, -102.1130336443976 45.959162795100383, -102.12335160658608 45.959173206572416, -102.12327175652177 45.9447036058142))|
+
+#### Create summary acres for each landunit
+
+```{SQL}
+CREATE TABLE #AoiAcres
+    ( aoiid INT,
+    landunit CHAR(20),
+    landunit_acres FLOAT
+    );
+```
+
+```{SQL}
+INSERT INTO #AoiAcres (aoiid, landunit, landunit_acres )\
+SELECT  aoiid, landunit,
+SUM( ROUND( ( ( GEOGRAPHY::STGeomFromWKB(aoigeom.STAsBinary(), 4326 ).STArea() ) / 4046.8564224 ), 3 ) ) AS landunit_acres
+FROM #AoiTable
+GROUP BY aoiid, landunit;
+```
+
+|aoiid|	landunit|landunit_acres|
+|------|-------------|----------------|
+|1|	T9981 Fld3|          	328.952|
+|2|	T9981 Fld4  |        	318.722|
+
+

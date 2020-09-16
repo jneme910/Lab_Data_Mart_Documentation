@@ -1,0 +1,5316 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_054167 -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+    
+    
+    
+    
+        
+    
+
+
+<title>
+			
+			 
+			
+			
+                
+            Soil Texture Calculator | NRCS Soils
+            
+
+
+				
+</title>
+  
+        
+
+       
+        
+	
+	                 
+		        
+	              
+                                                              
+           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                  
+                     
+  
+
+
+
+<script async="" src="./Soil Texture Calculator _ NRCS Soils_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Soil Texture Calculator _ NRCS Soils_files/ga.js.download"></script><script type="text/javascript" async="" src="./Soil Texture Calculator _ NRCS Soils_files/recaptcha__en.js.download"></script><script type="text/javascript">
+    // Instructions: please embed this snippet directly into every page in your website template.
+    // For optimal performance, this must be embedded directly into the template, not referenced
+    // as an external file.
+
+    // Answers Cloud Services Embed Script v1.02
+    // DO NOT MODIFY BELOW THIS LINE *****************************************
+    ;(function (g) {
+        var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+                aex = {
+                    "src": "//gateway.answerscloud.com/nrcs-usda-gov/production/gateway.min.js",
+                    "type": "text/javascript",
+                    "async": "true",
+                    "data-vendor": "acs",
+                    "data-role": "gateway"
+                };
+        for (var attr in aex) { am.setAttribute(attr,aex[attr]); }
+        h.appendChild(am);
+        g['acsReady'] = function () {var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0),k = setInterval(function () {if (typeof g[aT] === 'function') {clearInterval(k);for (i = 0; i < args.length; i++) {g[aT].call(g, function(fn) { return function() { setTimeout(fn, 1) };}(args[i]));}}}, 50);};
+    })(window);
+    // DO NOT MODIFY ABOVE THIS LINE *****************************************
+</script><script src="./Soil Texture Calculator _ NRCS Soils_files/gateway.min.js.download" type="text/javascript" async="true" data-vendor="acs" data-role="gateway"></script>
+
+
+          
+<link href="./Soil Texture Calculator _ NRCS Soils_files/NRCS_Consumption_styles.css" rel="styleSheet" type="text/css">    
+<link href="./Soil Texture Calculator _ NRCS Soils_files/jquery.treeview.css" rel="styleSheet" type="text/css">
+
+
+
+<link href="./Soil Texture Calculator _ NRCS Soils_files/minimalist.css" rel="styleSheet" type="text/css">              
+
+
+
+<link rel="stylesheet" type="text/css" href="./Soil Texture Calculator _ NRCS Soils_files/jquery.fancybox-1.3.0.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./Soil Texture Calculator _ NRCS Soils_files/slideout_update_form.css" media="screen">
+ 
+
+
+
+<script src="./Soil Texture Calculator _ NRCS Soils_files/jquery.tools.min.js.download"></script> 
+	
+	<script type="text/javascript">
+	
+	function approveContent(docName,revID,userName){
+	var $headjs = jQuery.noConflict(); 
+	$headjs("#approveButton").attr("disabled","disabled");
+	$headjs("#rejectButton").attr("disabled","disabled");	
+	var res='';
+	$headjs.ajax({
+			url: '/wps/PA_NRCSContribution/workflowaction/?action=approve&docName='+docName+'&dID='+revID+'&userId='+userName,
+			cache: false,
+			success: function(data) {
+			alert(data);
+				res = $headjs.trim(data);
+				if(res.indexOf("success")==-1){
+					$headjs("#approveButton").removeAttr("disabled");
+				    $headjs("#rejectButton").removeAttr("disabled");	
+				}
+				
+				//window.load.href("<url>");
+			}
+		});
+}
+function rejectContent(docName,revID,userName){
+	var $headjs = jQuery.noConflict();
+	var res='';
+	$headjs("#rejectMessagePop").css({"display":"none"});
+	var message = $headjs("#rejectText").val();
+	$headjs("#rejectText").val("");
+	$headjs.ajax({
+			url: '/wps/PA_NRCSContribution/workflowaction/?action=reject&docName='+docName+'&dID='+revID+'&userId='+userName+'&message='+message,
+			cache: false,
+			success: function(data) {
+				alert(data);
+				res = $headjs.trim(data);
+				if(res.indexOf("success")==-1){
+					$headjs("#approveButton").removeAttr("disabled");
+					$headjs("#rejectButton").removeAttr("disabled");	
+				}
+				
+				
+			}
+		});
+		
+	
+}
+
+function submitContent(docName,revID,userName){
+	var $headjs = jQuery.noConflict(); 
+	$headjs("#submitButton").attr("disabled","disabled");
+	var res='';
+	$headjs.ajax({
+			url: '/wps/PA_NRCSContribution/workflowaction/?action=submit&docName='+docName+'&dID='+revID+'&userId='+userName,
+			cache: false,
+			success: function(data) {
+				alert(data);
+				res = $headjs.trim(data);
+				if(res.indexOf("success")==-1){
+					$headjs("#submitButton").removeAttr("disabled");
+				}
+				
+					
+			}
+		});
+}
+	</script>
+<script type="text/javascript">	
+function openRejectMessage(){
+
+var $g = jQuery.noConflict();
+$g("#approveButton").attr("disabled","disabled");
+$g("#rejectButton").attr("disabled","disabled");	
+	
+$g("#rejectText").val("");
+$g("#rejectButton_sbt").attr("disabled","disabled");
+$g("#rejectButton_sbt").css({"opacity":"0.5"});
+//document.getElementById('fade').style.display='block';
+document.getElementById('rejectMessagePop').style.display='block';
+
+}
+
+function closeRejectMessage(){
+
+var $g = jQuery.noConflict();
+$g("#approveButton").removeAttr("disabled");
+$g("#rejectButton").removeAttr("disabled");	
+
+//document.getElementById('fade').style.display='none';
+document.getElementById('rejectMessagePop').style.display='none';
+
+$g("#rejectText").val("");
+$g("#rejectButton_sbt").attr("disabled","disabled");
+$g("#rejectButton_sbt").css({"opacity":"0.5"});
+}
+
+</script>
+<script type="text/javascript">
+$prevjs = jQuery.noConflict();
+$prevjs(document).ready(function(){  
+	$prevjs("#rejectButton_sbt").attr("disabled","disabled");
+	$prevjs("#rejectButton_sbt").css({"opacity":"0.5"});
+	
+	$prevjs('#rejectText').bind('input propertychange', function() {
+			if(this.value.length>=10){
+		        $prevjs("#rejectButton_sbt").removeAttr("disabled");
+			  	$prevjs("#rejectButton_sbt").css({"opacity":"1"});
+	      }else{
+	      		 $prevjs("#rejectButton_sbt").attr("disabled","disabled");
+			  	$prevjs("#rejectButton_sbt").css({"opacity":"0.5"});
+	      }
+	      
+	});
+});
+
+</script>
+ 
+
+
+<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/menu_service.js.download"></script>
+<script type="text/javascript">var menuService_AppletCodebase ="/wps/menu";</script>
+ 
+            
+
+                                                                                                                                                                                          
+
+	                   
+	<meta http-equiv="content-style-type" content="text/css"> 
+	 <meta http-equiv="content-script-type" content="text/javascript">    
+	 <meta name="google-site-verification" content="GMHzcPZTUCrgmtIE0t-CJTL5Dhb5mTAqtJaGw-qjz8Q">               
+	 <meta name="msvalidate.01" content="731F293C533DA1702C86D84D54A7E962">
+	 <!-- Setting noindex meta tag for Archived content -->
+	 
+	<!-- JS for Navigation Hover -->
+	<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/jquery.js.download"></script>
+	<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/jquery.min.js.download"></script>
+	<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/jquery.hoverIntent.minified.js.download"></script>
+	
+	
+	<script type="text/javascript">
+	   if (self === top) {
+		   var antiClickjack = document.getElementById("antiClickjack");
+		   antiClickjack.parentNode.removeChild(antiClickjack);
+	   } else {
+		   top.location = self.location;
+	   }
+	</script>
+	
+
+	 		           
+	
+	
+	
+	<script src="./Soil Texture Calculator _ NRCS Soils_files/jquery.cookie.js.download" type="text/javascript"></script>
+	<script src="./Soil Texture Calculator _ NRCS Soils_files/jquery.treeview.js.download" type="text/javascript"></script>
+	
+	<!--Script for Flow Player--> 
+	<script src="./Soil Texture Calculator _ NRCS Soils_files/flowplayer.min.js.download" type="text/javascript"></script>
+
+	<!--Script for Gov Delivery Pop Up -->
+	<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/jquery.fancybox-1.3.0.pack.js.download"></script>
+	
+	<!-- Script for the Menu bar -->
+	<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/menubar.js.download"></script>
+	  
+	<!-- Script for ReCaptcha -->
+    <script type="text/javascript">
+    var loc = location.protocol;
+    var x = loc + '//www.google.com/recaptcha/api.js';
+    document.write("<script src='"+ x + "'><\/script>");
+    </script><script src="./Soil Texture Calculator _ NRCS Soils_files/api.js.download"></script>
+
+
+	
+	<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/jquery.leaveNotice.min.js.download"></script>
+	<link rel="stylesheet" type="text/css" href="./Soil Texture Calculator _ NRCS Soils_files/jquery.leaveNotice.css"> 
+
+	<script src="./Soil Texture Calculator _ NRCS Soils_files/galleria-1.4.2.min.js.download"></script>
+	
+	<script type="text/Javascript">
+	   
+	  
+	
+	
+	$headjs = jQuery.noConflict(); 
+	$headjs(document).ready(function(){
+
+	// Set tabindex on the main and section divs so IE knows they are focusable, and so Webkit browsers will focus() them.
+	$headjs('#actualContent').attr('tabindex', -1);
+	$headjs('.section').attr('tabindex', -1);
+
+	
+	
+	// Highlight targets of in-page links when clicked and set focus.
+	$headjs("a[href^='#']").click(function(event){
+		var clickAnchor="#"+this.href.split('#')[1];
+		$headjs(clickAnchor).css("backgroundColor","#ffff66").animate({ backgroundColor: "#ffffff" }, 1000);
+		setTimeout(function() {
+			$headjs(clickAnchor).focus();
+		}, 100);
+	});
+	
+	
+	var comp = new RegExp("usda.gov","i");
+
+	$headjs('#overview a').each(function(){
+	
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+		
+		var aTagObj = $headjs(this);
+		
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	   if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+	
+	$headjs('.box a').each(function(){
+	
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+	
+		$headjs('#grapImg a').each(function(){
+	
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }								  
+						}
+					 }
+				});
+		}
+	   
+	});
+	
+	$headjs('#graphicImageText a').each(function(){
+	
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;margin:5px;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+	
+	$headjs('#detail a').each(function(){
+	
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+
+	$headjs('#overviewhlt a').each(function(){
+		
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+
+	$headjs('#detailhlt a').each(function(){
+		
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+	$headjs('#blogslist a').each(function(){
+	
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+	
+	$headjs('#blogdetail a').each(function(){
+	
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+	
+	$headjs('#blogdetailhlt a').each(function(){
+		
+        var hrefProp = $headjs(this).attr("href") == undefined ? '' : $headjs(this).attr("href").trim();
+
+		
+		var aTagObj = $headjs(this);
+		var newWindow = $headjs(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+			$headjs.ajax({
+					 async: false,
+					 type: 'GET',
+					 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+					 success: function(data) {
+						  if(data.indexOf(hrefProp) < 0){
+						
+						//alert(aTagObj.attr("href"));
+						  if(newWindow == "_blank"){
+							aTagObj.addClass('ext_url_n');		
+						}else{
+						  aTagObj.addClass('ext_url');		
+						 }		
+						  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;'/>&nbsp;&nbsp;&nbsp;&nbsp;");
+						 
+						}
+					 }
+				});
+		}
+	   
+	});
+	
+	  $headjs(function(){
+		$headjs('.ext_url_n').leaveNotice({
+							siteName:"Leaving Site Notification",
+							exitMessage:"<p>You have selected an external link. To access the link in a new window, click {URL}. </p>",
+							preLinkMessage:"<hr/><p>To remain on the Natural Resources Conservation Service website select 'Cancel' or press the ESC key</p><hr/>",
+							timeOut:10000,
+							newWindow: true
+						});
+		
+		$headjs('.ext_url').leaveNotice({
+							siteName:"Leaving Site Notification",
+							exitMessage:"<p>You have selected an external link and are being automatically redirected to {URL}. </p>",
+							preLinkMessage:"<hr/><p>To remain on the Natural Resources Conservation Service website select 'Cancel' or press the ESC key</p><hr/>",
+							timeOut:10000
+						});
+						
+						});  
+	
+  
+});
+		$headjs("body").live("keydown",function(e){
+			if(e.which == 78 && e.altKey){
+				
+				//return false;
+				$headjs('.about_link').focus()
+
+				e.preventDefault();
+			
+			}
+		
+		});
+		
+		
+/*		//This is to make sure that pressing enter on a link does not take you anywhere.
+		
+		$headjs("a").live("keydown", function(e) {
+		
+			if(e.which == 13){
+				e.preventDefault();
+			}
+		});
+
+	//This is to make sure that space bar on a link triggers a click event like the enter button.
+	$headjs("a").live("keypress", function(e) {
+		
+		if (e.which == 32) {
+		  e.preventDefault(); 
+		  if($headjs(this).attr('href') != undefined){
+		  window.location = $headjs(this).attr('href');	
+		  }
+		}else if(e.which == 13){
+			e.preventDefault();
+		}
+	});*/
+	
+	
+
+	
+	
+	</script>
+    
+ 
+	
+<link rel="stylesheet" type="text/css" href="./Soil Texture Calculator _ NRCS Soils_files/detailtablefix.css" media="all"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="//gateway.answerscloud.com/code/19.5.2/fs.record.js" data-vendor="fs" src="./Soil Texture Calculator _ NRCS Soils_files/fs.record.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="//gateway.answerscloud.com/code/19.5.2/fs.utils.js" data-vendor="fs" src="./Soil Texture Calculator _ NRCS Soils_files/fs.utils.js.download"></script></head>   
+ 
+                                                                                                              
+	<body style="">		 		           
+<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_054167#actualContent" accesskey="c" style="position:absolute;color:#9BADA2;font-size:0;" title="Skip Navigation. Access key C. Link to Main Content." tabindex="1">Skip Navigation</a> 	
+
+		<table id="wptheme_pageArea" summary="This table is used for page layout" align="center" border="0" cellpadding="0" cellspacing="0" class="WIDBackgroundColor">
+			<tbody><tr>
+				<td width="100%" valign="top">                       
+					 
+					<div id="mainContent" class="WhiteBackgroundColor" style="width:996px;">
+						 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<table class="layoutRow" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0">
+			
+		<tbody><tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<table class="layoutRow" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	
+		
+		
+		<td valign="top" style="width:1px;">
+			     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+				
+
+
+
+
+
+    
+
+   
+   
+<!-- Begin NavigationPortletView.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var $s = {}
+var isClick = false;
+$s = jQuery.noConflict(); 
+</script>
+
+
+
+	
+	
+
+<div id="navwrapper">
+
+<div id="left_top_nav">
+<div id="usdalogo">
+
+<a href="http://www.usda.gov/" tabindex="2">
+<img width="72" height="51" alt="USDA Logo" src="./Soil Texture Calculator _ NRCS Soils_files/USDA-Logo.jpg">
+</a>
+</div>
+
+
+
+
+
+
+
+
+<div id="nrcstitle" style="margin-top: 0px;">
+	<h1 style="margin: 5px">
+		<a href="http://www.nrcs.usda.gov/" tabindex="3">  Natural Resources Conservation Service </a>
+	</h1>
+	<h1 style="margin: 5px">
+	
+	<a href="http://www.nrcs.usda.gov/wps/portal/nrcs/site/soils/home" tabindex="4"> 
+		Soils</a></h1>
+</div>
+
+
+
+
+<div style="height:56px;"></div>
+<div id="usdatitle">
+United States Department of Agriculture
+</div>
+
+
+
+<div id="nav_wraps" role="navigation" aria-label="Main menu" tabindex="-1" style="width:480px;height:38px;float:left;margin-left:2px;"> 
+  
+	<!-- Looping though the Navigation Map to display the main Navigation items (Level 0) -->
+	
+
+		
+		
+		
+		
+			
+			
+			
+			
+		
+					
+		
+		
+		
+								
+			
+				<ul id="nav" class="menubar root-level" role="menubar">
+			    
+				<li class="left_corner_nav">
+					<a class="node_link">&nbsp;</a>
+				</li>
+				
+				
+				<li class="center_nav menu-parent" role="menuitem" tabindex="11" aria-haspopup="true" title="Press Space bar to expand topics sub menu">
+					<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_054167#" tabindex="-1"> Topics</a>  
+					
+					
+						
+					<ul id="topics" role="menu" class="menu" aria-hidden="true" style="z-index: 109; width: 295px; display: none;">
+						
+						
+								
+									
+									<li role="menuitem" class="menu-item sub-menu-parent" tabindex="-1" title="Press space bar to expand Soil Use. There are 4 children in the sub menu. Click to follow Link">
+									
+									
+									<div class="expandarea" style="float:left;">
+										<a class="expand_link" href="javascript:showhidechildnodes(&#39;102000000000000&#39;)" style="width:15px;height:15px;border-width:0px;" tabindex="-1">
+										  <img class="expand_img" id="level1_hitarea_102000000000000" alt="" src="./Soil Texture Calculator _ NRCS Soils_files/arrow_right.png" tabindex="-1">
+										</a>
+										<input type="hidden" id="show_hide_toggle_102000000000000" value="1">
+									 </div> 
+									 
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/use">
+												<span style="color:#005782">Soil Use</span>
+										</a>	
+									
+									
+									
+											
+											<ul id="level2_102000000000000" style="display:none;width:295px;" aria-hidden="true">
+											
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/use/hydric">
+												<span style="color:#005782">Hydric Soils</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/use/urban">
+												<span style="color:#005782">Urban Soils</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/use/maps">
+												<span style="color:#005782">Maps</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/use/worldsoils">
+												<span style="color:#005782">World Soil Resources</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+								</ul></li>
+							
+								
+									
+									<li role="menuitem" class="menu-item sub-menu-parent" tabindex="-1" title="Press space bar to expand Soil Research and Laboratory. There are 3 children in the sub menu. Click to follow Link">
+									
+									
+									<div class="expandarea" style="float:left;">
+										<a class="expand_link" href="javascript:showhidechildnodes(&#39;103000000000000&#39;)" style="width:15px;height:15px;border-width:0px;" tabindex="-1">
+										  <img class="expand_img" id="level1_hitarea_103000000000000" alt="" src="./Soil Texture Calculator _ NRCS Soils_files/arrow_right.png" tabindex="-1">
+										</a>
+										<input type="hidden" id="show_hide_toggle_103000000000000" value="1">
+									 </div> 
+									 
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research">
+												<span style="color:#005782">Soil Research and Laboratory</span>
+										</a>	
+									
+									
+									
+											
+											<ul id="level2_103000000000000" style="display:none;width:295px;" aria-hidden="true">
+											
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/guide">
+												<span style="color:#005782">Methods &amp; Guides</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/report">
+												<span style="color:#005782">Publications &amp; Reports</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+								</ul></li>
+							
+								
+									
+									<li role="menuitem" class="menu-item sub-menu-parent" tabindex="-1" title="Press space bar to expand Soil Education. There are 4 children in the sub menu. Click to follow Link">
+									
+									
+									<div class="expandarea" style="float:left;">
+										<a class="expand_link" href="javascript:showhidechildnodes(&#39;104000000000000&#39;)" style="width:15px;height:15px;border-width:0px;" tabindex="-1">
+										  <img class="expand_img" id="level1_hitarea_104000000000000" alt="" src="./Soil Texture Calculator _ NRCS Soils_files/arrow_right.png" tabindex="-1">
+										</a>
+										<input type="hidden" id="show_hide_toggle_104000000000000" value="1">
+									 </div> 
+									 
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/edu">
+												<span style="color:#005782">Soil Education</span>
+										</a>	
+									
+									
+									
+											
+											<ul id="level2_104000000000000" style="display:none;width:295px;" aria-hidden="true">
+											
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/edu/kthru6">
+												<span style="color:#005782">Grades K thru 6</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/edu/7thru12">
+												<span style="color:#005782">Grades 7 thru 12</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/edu/college">
+												<span style="color:#005782">College Level</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item" tabindex="-1" title="Click to follow Link">
+									
+									
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/edu/ncss">
+												<span style="color:#005782">NCSS Members</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+								</ul></li>
+							
+								
+									
+									<li role="menuitem" class="menu-item sub-menu-parent" tabindex="-1" title="Press space bar to expand Technical References. There are 0 children in the sub menu. Click to follow Link">
+									
+									
+									<div class="expandarea" style="float:left;">
+										<a class="expand_link" href="javascript:showhidechildnodes(&#39;651000000000000&#39;)" style="width:15px;height:15px;border-width:0px;" tabindex="-1">
+										  <img class="expand_img" id="level1_hitarea_651000000000000" alt="" src="./Soil Texture Calculator _ NRCS Soils_files/arrow_right.png" tabindex="-1">
+										</a>
+										<input type="hidden" id="show_hide_toggle_651000000000000" value="1">
+									 </div> 
+									 
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/ref">
+												<span style="color:#005782">Technical References</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item sub-menu-parent" tabindex="-1" title="Press space bar to expand International Year of Soils. There are 0 children in the sub menu. Click to follow Link">
+									
+									
+									<div class="expandarea" style="float:left;">
+										<a class="expand_link" href="javascript:showhidechildnodes(&#39;652000000000000&#39;)" style="width:15px;height:15px;border-width:0px;" tabindex="-1">
+										  <img class="expand_img" id="level1_hitarea_652000000000000" alt="" src="./Soil Texture Calculator _ NRCS Soils_files/arrow_right.png" tabindex="-1">
+										</a>
+										<input type="hidden" id="show_hide_toggle_652000000000000" value="1">
+									 </div> 
+									 
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/yos">
+												<span style="color:#005782">International Year of Soils</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+						
+					
+								
+									
+									<li role="menuitem" class="menu-item sub-menu-parent" tabindex="-1" title="Press space bar to expand Focus Teams. There are 0 children in the sub menu. Click to follow Link">
+									
+									
+									<div class="expandarea" style="float:left;">
+										<a class="expand_link" href="javascript:showhidechildnodes(&#39;653000000000000&#39;)" style="width:15px;height:15px;border-width:0px;" tabindex="-1">
+										  <img class="expand_img" id="level1_hitarea_653000000000000" alt="" src="./Soil Texture Calculator _ NRCS Soils_files/arrow_right.png" tabindex="-1">
+										</a>
+										<input type="hidden" id="show_hide_toggle_653000000000000" value="1">
+									 </div> 
+									 
+									
+									
+									 	<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/focusteams">
+												<span style="color:#005782">Focus Teams</span>
+										</a>	
+									
+									
+									
+										
+											</li>
+									
+									
+									
+									
+							
+								
+									
+									
+							
+							
+						
+					
+					
+					</ul>
+				
+				</li>	
+				<li class="transparent_nav" tabindex="-1">
+					<img width="1" height="2" src="./Soil Texture Calculator _ NRCS Soils_files/transparent.gif" alt="" title="">
+				</li>
+				
+						
+				
+				
+				<li class="menu-parent" role="menuitem" tabindex="12" aria-haspopup="true" title="Press Space bar to expand Soil SurveySub Menu. Click to Follow Link">  
+					
+						
+									<a tabindex="-1" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey">
+											Soil Survey
+									</a>
+						
+					
+						
+									
+						   <ul role="menu" class="menu" aria-hidden="true" style="display: none;">
+						
+						   
+							
+									
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+						
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey">
+												<span style="color:#005782">Soil Survey - Home</span>
+										    	</a>
+										    	
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/soilsurvey/soils/survey/state">
+													<span style="color:#005782">Soil Surveys by State</span>
+												</a>		
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/partnership">
+													<span style="color:#005782">Partnerships</span>
+												</a>		
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/publication">
+													<span style="color:#005782">Publications</span>
+												</a>		
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/class">
+													<span style="color:#005782">Soil Classification</span>
+												</a>		
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/geo">
+													<span style="color:#005782">Soil Geography</span>
+												</a>		
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/tools">
+													<span style="color:#005782">Tools</span>
+												</a>		
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office">
+													<span style="color:#005782">Soil Survey Regional Offices</span>
+												</a>		
+											
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+												<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/climate">
+													<span style="color:#005782">Soil Climate Research Stations</span>
+												</a>		
+											
+													
+										</li>
+
+											
+								
+											
+							</ul>
+								
+					
+				</li>	
+				
+						
+		
+				
+				
+		
+		
+		
+
+	
+
+		
+		
+		
+		
+			
+			
+			
+			
+		
+					
+		
+		
+		
+				
+			<li class="transparent_nav" tabindex="-1">
+					<img width="1" height="2" src="./Soil Texture Calculator _ NRCS Soils_files/transparent.gif" alt="" title="">
+				</li>
+				<li class="menu-parent" role="menuitem" tabindex="13" aria-haspopup="true" title="Press Space Bar to expand Soil Health submenu. Click to follow link">
+								
+											<a tabindex="-1" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health">
+													Soil Health
+											</a>
+									
+					
+						
+						
+						
+									
+									
+						   <ul role="menu" class="menu" aria-hidden="true" style="display: none;">
+							
+									
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+							
+													<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health">
+													<span style="color:#005782">Soil Health - Home</span>
+											    	</a>
+											    	
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+													<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health/biology">
+														<span style="color:#005782">Soil Biology</span>
+													</a>	
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+													<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health/assessment">
+														<span style="color:#005782">Soil Health Assessment</span>
+													</a>	
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+													<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health/mgnt">
+														<span style="color:#005782">Soil Health Management</span>
+													</a>	
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+													<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health/resource">
+														<span style="color:#005782">Resources &amp; Publications</span>
+													</a>	
+													
+										</li>
+
+											
+								
+										
+						  </ul>
+							
+							
+								
+					
+					
+				</li>		
+			
+ 		
+				
+				
+		
+		
+		
+
+	
+
+		
+		
+		
+		
+			
+			
+			
+			
+		
+					
+		
+		
+		
+				
+			<li class="transparent_nav" tabindex="-1">
+					<img width="1" height="2" src="./Soil Texture Calculator _ NRCS Soils_files/transparent.gif" alt="" title="">
+				</li>
+				<li class="menu-parent" role="menuitem" tabindex="14" aria-haspopup="true" title="Press Space Bar to expand Contact Us submenu. Click to follow link">
+								
+											<a tabindex="-1" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/contactus">
+													Contact Us
+											</a>
+									
+					
+						
+						
+						
+									
+									
+						   <ul role="menu" class="menu" aria-hidden="true" id="specialId" style="display: none;">
+							
+									
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+							
+													<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/contactus">
+													<span style="color:#005782">Directories</span>
+											    	</a>
+											    	
+													
+										</li>
+
+										
+										
+										<li role="menuitem" class="menu-item" tabindex="-1" title="Click to Follow Link.">
+											
+													<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/contactus/feedback">
+														<span style="color:#005782">Feedback Forms</span>
+													</a>	
+													
+										</li>
+
+											
+								
+										
+						  </ul>
+							
+							
+								
+					
+					
+				</li>		
+			
+ 		
+				
+				
+		
+		
+		
+			
+			<li class="right_corner_nav">
+					<a class="node_link">&nbsp;</a>
+				</li>
+					
+			</ul>							
+									
+		
+
+	
+	
+	</div>
+	</div>
+	<div id="right_top_nav">
+	
+		<div id="leaf">
+			<a href="http://www.nrcs.usda.gov/" tabindex="-1">  &nbsp;</a>
+		</div>
+		<div id="top_nav">
+			
+			
+			
+			
+			
+			<ul>
+				
+
+					
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+							
+							
+						<li>
+							<a class="about_link" title="Accesskey N. Link to Navigation. " accesskey="n" tabindex="5" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/about">
+												About Us
+							</a>	
+						</li>
+					
+						
+		
+								<li><a>&nbsp; | &nbsp;</a></li>				
+									
+						
+						
+						
+						
+						
+				
+
+					
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+						<li>
+							<a tabindex="6" href="https://www.nrcs.usda.gov/wps/portal/nrcs/news/soils/release">
+												Soil Survey Releases
+							</a>	
+						</li>
+					
+						
+		
+								<li><a>&nbsp; | &nbsp;</a></li>				
+									
+						
+						
+						
+						
+						
+				
+
+					
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+						<li>
+							<a tabindex="7" href="https://www.nrcs.usda.gov/wps/portal/nrcs/sitenav/soils/centers">
+												National Centers
+							</a>	
+						</li>
+					
+						
+		
+								<li><a>&nbsp; | &nbsp;</a></li>				
+									
+						
+						
+						
+						
+						
+				
+
+					
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+						<li>
+							<a tabindex="8" href="https://www.nrcs.usda.gov/wps/portal/nrcs/sitenav/soils/states">
+												State Websites
+							</a>	
+						</li>
+					
+						
+						
+						
+						
+						
+				
+			
+			</ul>
+			
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		 
+		 
+		      
+						
+					<div class="clear"></div>
+					 <div id="quick_search">
+					 
+					 
+					 
+				
+
+						
+						 <form accept-charset="UTF-8" action="https://usdasearch.usda.gov/search" id="search_form" method="get">
+						<div style="margin:0;padding:0;display:inline">
+						<input name="utf8" type="hidden" value="✓"></div>
+					   <input id="affiliate" name="affiliate" type="hidden" value="nrcs_www_soils9995">
+					   <input id="dc" name="dc" type="hidden" value="null">
+					   <label for="query" title="Enter Keyword, Phrase, or Text to search the site"><span class="accessibility">Enter Keyword, Phrase, or Text to search the site</span></label> 
+		           					
+					    <input autocomplete="off" class="search" tabindex="9" id="query" name="query" type="text">
+					  <div class="searchButton">
+					   <input name="commit" type="image" src="./Soil Texture Calculator _ NRCS Soils_files/Search_Button.gif" alt="Enter - Search Website" tabindex="10" title="Enter - Search Website">
+					  </div>
+					  </form> 
+					  
+					  
+					</div>
+					
+					<!-- -->
+					
+					
+					<div class="clear"></div>
+					<div id="additional_links">
+					
+			
+					
+					<ul>
+								
+				
+									
+									
+									
+									
+										
+										
+										
+										
+										
+										
+										
+													
+										
+													
+													
+										
+										<li>
+											<a class="addLink_First" tabindex="15" href="https://www.nrcs.usda.gov/wps/portal/nrcs/sitenav/soils/browseaudience">
+																Browse By Audience
+											</a>	
+										</li>
+										
+										
+										
+										
+						
+												<li><a>&nbsp; | &nbsp;</a></li>				
+													
+										
+										
+										
+										
+										
+								
+				
+									
+									
+									
+									
+										
+										
+										
+										
+										
+										
+										
+										
+										<li>
+											<a tabindex="16" href="https://www.nrcs.usda.gov/wps/portal/nrcs/sitenav/soils/azindex">
+																A-Z Index
+											</a>	
+										</li>
+										
+										
+										
+										
+										
+										
+										
+										
+								
+								
+									<li><a>&nbsp; | &nbsp;</a></li>		
+									
+									<li><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/national/help" class="node_link" tabindex="17">Help</a></li>
+								
+			
+				</ul>
+				
+				</div>
+				
+				
+		
+	
+	</div>
+	
+	
+	
+	</div>
+	<!-- -->
+	<script type="text/javascript">
+
+	function showhidechildnodes(sitemapcode){
+
+
+		var $g = jQuery.noConflict(); 
+		
+		document.getElementById('topics').style.display = 'block';
+		
+		var toggle = document.getElementById('show_hide_toggle_'+sitemapcode).value;
+		var srcshow = "/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/arrow_down.png";
+		var srchide = "/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/arrow_right.png";
+		var imgid = "#level1_hitarea_" + sitemapcode;
+		var toggleid = "#show_hide_toggle_"+sitemapcode;
+		
+		//alert(toggle);
+		if(toggle == 1){			
+		
+			$g(imgid).attr("src", srcshow);
+			//$g("#level2_"+sitemapcode).css({"margin-left":"2px"});
+			$g("#level2_"+sitemapcode).slideDown(300);		
+			$g(toggleid).attr("value", 0);
+		}
+		if(toggle == 0){
+		
+			$g(imgid).attr("src", srchide);
+			$g("#level2_"+sitemapcode).slideUp(300);		
+			$g(toggleid).attr("value", 1);
+			
+		}
+		
+
+			 
+			
+	}
+	</script>
+	
+<!--  Code for the Gov Delivery Pop Up  -->
+
+
+
+ 	
+ 
+
+
+
+
+
+				
+			</td>
+		</tr>
+	</tbody></table>			
+		</td>
+		
+		 
+		</tr>
+</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<table class="layoutRow" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0">
+			
+		<tbody><tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+				
+
+
+
+
+
+    
+
+
+<!-- Begin BreadCrumbPortletView.jsp -->
+
+
+
+
+
+
+
+
+
+<div id="breadcrumb" style="height: 39px;">
+<div id="traversed" style="width: 996px;">
+<p>You are Here:&nbsp;</p>
+	
+
+			
+			
+			
+			
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+				<p>	<a class="node_link" tabindex="18" href="https://www.nrcs.usda.gov/wps/portal/nrcs/site/soils/home">
+												Home
+					</a> /&nbsp; </p>
+			
+	
+
+			
+			
+			
+			
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+			
+				
+					<p><a class="node_link" tabindex="19" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey">
+												Soil Survey
+					</a>&nbsp;</p>  <p>/&nbsp;Soil Texture Calculator</p>
+			
+				
+			
+			
+	
+	
+	</div>
+
+	<div id="socialmedia" style="margin-top: 9px; position: absolute; margin-left: 650px;">
+			<i>Stay Connected</i>
+						<a target="_blank" href="http://www.facebook.com/usda" tabindex="20"><img alt="USDA In Facebook" src="./Soil Texture Calculator _ NRCS Soils_files/sc-facebook-small.png"></a>
+						
+						<a target="" href="https://twitter.com/usda_nrcs_nssc/" tabindex="21"><img alt="NRCS In Twitter" src="./Soil Texture Calculator _ NRCS Soils_files/sc-twitter-small.png"></a>
+						
+						<a target="" href="http://www.youtube.com/user/nrcsnssc" tabindex="22"><img alt="NRCS In Youtube" src="./Soil Texture Calculator _ NRCS Soils_files/sc-youtube-small.png"></a>
+						
+						<a target="" href="https://public.govdelivery.com/accounts/USDANRCS/subscriber/new?topic_id=USDANRCS_55" tabindex="23"><img alt="NRCS In Mail" src="./Soil Texture Calculator _ NRCS Soils_files/govdelivery_bubble.png"></a>
+						
+						<a target="_blank" href="http://www.flickr.com/usdagov" tabindex="24"><img alt="USDA In Flicker" src="./Soil Texture Calculator _ NRCS Soils_files/sc-flickr-small.png"></a>
+						
+	</div>
+</div>
+
+
+<script type="text/javascript">
+ var $r = jQuery.noConflict(); 
+var breadHeight = $r('#traversed').height();
+if(breadHeight !=0){
+$r('#breadcrumb').css({"height":breadHeight});
+}
+if(breadHeight>30){
+	 $r('#traversed').css({"width":"996px"});
+	 $r('#socialmedia').css({"margin-top":breadHeight-30});
+	 $r('#socialmedia').css({"position":"absolute"});
+	 $r('#socialmedia').css({"margin-left":"650px"});
+}
+
+</script>
+
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+	
+		
+</tbody></table>
+
+			
+		</td>
+		
+		 
+		</tr>
+</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<table class="layoutRow" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0">
+			
+		<tbody><tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+				
+
+
+
+
+
+    
+
+
+
+<!-- Begin SubNavigationPortletView.jsp -->
+
+
+
+
+<script type="text/javascript">
+
+
+
+var dom = {};
+dom.query = jQuery.noConflict(true);
+
+	dom.query(document).ready(function(){
+		dom.query("#tree").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol"
+				
+			});
+			setTimeout( function() {
+            dom.query("#loadingText").hide();
+            dom.query("#tree").slideDown().delay(800);
+        }, 500);
+ })
+	
+
+</script>
+
+
+<div id="subnav">
+<!--Style display none is for the Loading Tree to show up instead of wrongly built tree structure -->
+<p id="loadingText" style="font-weight: bold; color: rgb(0, 87, 130); display: none;">Loading Tree...</p>
+<!--Style display none is for the Loading Tree to show up instead of wrongly built tree structure -->
+<ul id="tree" style="" class="treeview">
+
+	
+	
+	
+	
+	
+  <li id="selectedTree" style="list-style-type:none;" class="collapsable lastCollapsable"><div class=""></div>
+  
+		
+
+							<p class="boxheading"><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_054167#" style="color: #005782;font-family: Arial,Helvetica,sans-serif;font-size: 14px;font-style: normal;cursor:text;text-decoration:none;" accesskey="m" title="Accesskey M. Link to Menu. Soil Survey Menu. This Menu contains 8 children." tabindex="28">Soil Survey</a></p>
+
+		
+  
+  		
+  <ul style="display: block;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li id="firstElement" style="list-style-type:none;">
+  
+					
+					
+					
+					
+								<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey" tabindex="29">
+								Soil Survey - Home
+						    	</a>
+						    	
+						
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="31" href="https://www.nrcs.usda.gov/wps/portal/nrcs/soilsurvey/soils/survey/state">
+																Soil Surveys by State
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Partnerships sub menu. Click to Follow Link." tabindex="33" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/partnership">
+																Partnerships
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="35" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/partnership/ncss">
+																National Cooperative Soil Survey
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="37" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/publication">
+																Publications
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Soil Classification sub menu. Click to Follow Link." tabindex="39" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/class">
+																Soil Classification
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="41" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/class/taxonomy">
+																Soil Taxonomy
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="43" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/class/data">
+																Tools &amp; Data
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="45" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/class/maps">
+																Maps
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="47" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/geo">
+																Soil Geography
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="49" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/tools">
+																Tools
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Soil Survey Regional Offices sub menu. Click to Follow Link." tabindex="51" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office">
+																Soil Survey Regional Offices
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Portland, OR (SSR 1) sub menu. Click to Follow Link." tabindex="53" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr1">
+																Portland, OR (SSR 1)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="55" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr1/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="57" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr1/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="59" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr1/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Davis, CA (SSR 2) sub menu. Click to Follow Link." tabindex="61" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr2">
+																Davis, CA (SSR 2)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="63" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr2/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="65" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr2/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="67" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr2/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Raleigh, NC (SSR 3) sub menu. Click to Follow Link." tabindex="69" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr3">
+																Raleigh, NC (SSR 3)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="71" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr3/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="73" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr3/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="75" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr3/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Bozeman, MT (SSR 4) sub menu. Click to Follow Link." tabindex="77" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr4">
+																Bozeman, MT (SSR 4)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="79" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr4/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="81" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr4/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="83" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr4/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Salina, KS (SSR 5) sub menu. Click to Follow Link." tabindex="85" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr5">
+																Salina, KS (SSR 5)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="87" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr5/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="89" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr5/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="91" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr5/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Morgantown, WV (SSR 6) sub menu. Click to Follow Link." tabindex="93" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr6">
+																Morgantown, WV (SSR 6)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="95" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr6/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="97" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr6/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="99" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr6/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Auburn, AL (SSR 7) sub menu. Click to Follow Link." tabindex="101" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr7">
+																Auburn, AL (SSR 7)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="103" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr7/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="105" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr7/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="107" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr7/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Phoenix, AZ (SSR 8) sub menu. Click to Follow Link." tabindex="109" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr8">
+																Phoenix, AZ (SSR 8)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="111" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr8/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="113" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr8/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="115" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr8/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Temple, TX (SSR 9) sub menu. Click to Follow Link." tabindex="117" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr9">
+																Temple, TX (SSR 9)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="119" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr9/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="121" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr9/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="123" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr9/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand St. Paul, MN (SSR 10) sub menu. Click to Follow Link." tabindex="125" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr10">
+																St. Paul, MN (SSR 10)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="127" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr10/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="129" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr10/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="131" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr10/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Indianapolis, IN (SSR 11) sub menu. Click to Follow Link." tabindex="133" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr11">
+																Indianapolis, IN (SSR 11)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="135" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr11/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="137" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr11/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="139" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr11/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;" class="expandable"><div class="hitarea expandable-hitarea"></div>
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Press Shift Space Bar to expand Amherst, MA (SSR 12) sub menu. Click to Follow Link." tabindex="141" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr12">
+																Amherst, MA (SSR 12)
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+  		
+  <ul style="display: none;">
+  
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="143" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr12/contacts">
+																Contacts
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="145" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr12/profile">
+																Ecological Site Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="147" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/office/ssr12/tr">
+																Soil Information
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+  
+ 
+	
+	
+	
+		
+	
+	
+	
+		</ul></li>
+		
+		
+	
+	
+		</ul></li>
+		
+	
+	
+	
+  <li style="list-style-type:none;">
+  
+					
+					
+					
+														<a></a> <a class="focusarea" title="Click to Follow Link." tabindex="149" href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/survey/climate">
+																Soil Climate Research Stations
+														</a>	
+														
+														
+														
+					
+					
+		
+  
+			</li>	
+  
+
+  
+	  
+	  
+	  	</ul></li>
+	  	
+	  
+  
+  
+ 
+  
+</ul>
+
+
+
+</div>
+				
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+								
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+								
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+								
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+								
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+								
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+								
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+	
+		
+</tbody></table>
+
+			
+		</td>
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0">
+	
+	
+	<tbody><tr><td width="100%" valign="top" class="themetd"></td></tr> 
+		
+</tbody></table>
+
+			
+		</td>
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0" style="min-height:900px;*height:900px;">
+			
+		<tbody><tr class="themetd">
+			<td class="themetd" valign="top">
+			<div id="actualContent" accesskey="c" style="height:2px;" onfocus="document.getElementById(" actualcontent').style.border="1px solid #FF8000" '="" tabindex="-1"><a tabindex="-1" name="content" href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_054167"></a></div>
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+				
+
+
+
+
+
+
+
+
+
+
+
+<!-- Begin WIDDetailPortletView.jsp -->
+
+
+
+
+
+
+
+
+	
+
+
+<script type="text/javascript">
+	var $ = document;
+	var head  = $.getElementsByTagName('head')[0];
+	var link  = $.createElement('link');
+	link.rel   = 'stylesheet';
+	link.type = 'text/css';
+	link.href = '/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/detailtablefix.css';
+	link.media = 'all';
+	head.appendChild(link); 
+</script>
+
+<script src="./Soil Texture Calculator _ NRCS Soils_files/mediaelement-and-player.min.js.download"></script>
+<link rel="stylesheet" href="./Soil Texture Calculator _ NRCS Soils_files/mediaelementplayer.min.css">
+	
+<script>
+	jQuery(document).ready(function($) {
+			$('audio').mediaelementplayer();
+	});
+</script>
+<script type="text/javascript">
+
+
+   function showPopUp(broken_id,type,contentId){
+
+	   var $g = jQuery.noConflict();
+
+		$g(".popUpBroken").remove();
+		//Removing Hover Text pop ups as well.
+		$g(".imageHoverClass").remove();
+
+		
+		if(type == 'broken'){
+
+			$g("#"+broken_id).before("<div class='popUpBroken' id='" + broken_id +"_div' style='position:absolute;width:200px;height:100px;background-color:#c7d7db;color:#005782;border:2px solid #CCD7D7;font-size:0.9em;'><a style='float:right;' href='javascript:hidePopUp()'><b style='border:1px solid #000000;width:10px;height:10px;color:#000000;background-color:#FFFFFF;'>&nbsp; X &nbsp;</b></a><table><tr style='background-color:#FFFFFF;'><td> <b>This link appears to be broken.</b></td></tr><tr><td><b>Reason:</b>  Content does not exist.  Content may have been deleted from the CMS.</td></tr></table></div>");
+		}	
+		
+		if(type == 'broken_pub'){
+			$g("#"+broken_id).before("<div class='popUpBroken' id='" + broken_id +"_div' style='position:absolute;width:200px;height:106px;background-color:#c7d7db;color:#005782;border:2px solid #CCD7D7;font-size:0.9em;'><a style='float:right;' href='javascript:hidePopUp()'><b style='border:1px solid #000000;width:10px;height:10px;color:#000000;background-color:#FFFFFF;'>&nbsp; X &nbsp;</b></a><table><tr style='background-color:#FFFFFF;'><td> <b>This link appears to be broken.</b></td></tr><tr><td><b>Reason:</b>  Publication does not exist.  Publication may have been deleted from the System.</td></tr></table></div>");
+		}	
+		
+		if(type == 'publish' || type == 'archive' || type == 'broken_doc'){
+
+			$g.ajax({
+				url: '/wps/PA_NRCSConsumption/brokenLink/?type=' + type +'&cid='+contentId +'&brokenId='+broken_id,
+				cache: false,
+				success: function(data) {
+					
+					$g("#"+broken_id).before(data);	
+																													 
+				}
+			});
+			
+		}
+	
+	
+   }
+
+   function hidePopUp(broken_id){
+		
+	   var $g = jQuery.noConflict();
+		
+		$g(".popUpBroken").remove();
+	
+	
+   }
+
+   function loadGallery(galId){
+		var $g = jQuery.noConflict();
+		
+		//alert(galId);
+		
+		$g.ajax({
+				
+				url: '/wps/PA_NRCSConsumption/wid/GalleryImageLoader.jsp?galId='+galId,
+				cache: false,
+				success: function(data) {
+					
+				//	alert(data);
+					if(data != ''){
+				
+					$g(".gallery_insert").html(data);
+						  // Load the classic theme
+					Galleria.loadTheme('/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/js/gallery/themes/classic/galleria.classic.min.js');
+					
+					// Initialize Galleria
+					Galleria.run('#galleria');																							 
+					
+					
+					}
+				}
+			});
+			
+			
+	
+	}
+
+
+</script>
+
+
+
+
+
+						
+
+	<div id="detail" class="centerColImg">
+
+
+
+	
+
+	
+		
+		
+		
+		
+				
+					
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+      
+			
+			
+			
+			
+
+
+		
+					
+		
+		
+				
+			    		
+					
+				
+			
+				
+					
+				
+						<h2 class="nobanner">Soil Texture Calculator</h2> 
+				
+			<!-- gets dynamic conversion of content -->
+						
+			
+		
+		
+			
+				
+				<p>Use this online tool to calculate a single point texture class based on percent sand, silt, and clay. Including the optional sand fractions will refine the calculation.</p>
+
+<p>Or download a Microsoft Excel Macro-enabled spreadsheet to develop total sand, silt, and clay low, representative, and high values using an interactive texture triangle with textures that toggle on and off.</p>
+
+<ul>
+	<li><a href="https://www.nrcs.usda.gov/wps/PA_NRCSConsumption/download?cid=nrcs142p2_053196&amp;ext=xlsm">Download Interactive Texture Triangle Excel Version</a> (XLSM; 6.11 MB)</li>
+</ul>
+<script src="./Soil Texture Calculator _ NRCS Soils_files/nrcs142p2_091539.js.download" language="javascript" type="text/javascript"></script><script src="./Soil Texture Calculator _ NRCS Soils_files/nrcs142p2_091540.js.download" language="javascript" type="text/javascript"></script>
+
+<form name="info">
+<table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed;" width="690">
+	<tbody>
+		<tr>
+			<td valign="top" width="50%">
+			<p>Percent Sand:<br>
+			<input name="sand" size="20" type="text"></p>
+
+			<p>*Very Coarse Sand:<br>
+			<input name="vcs" size="20" type="text" value="0"><br>
+			*Coarse Sand:<br>
+			<input name="cs" size="20" type="text" value="0"><br>
+			*Medium Sand:<br>
+			<input name="ms" size="20" type="text" value="0"><br>
+			*Fine Sand:<br>
+			<input name="fs" size="20" type="text" value="0"><br>
+			*Very Fine Sand:<br>
+			<input name="vfs" size="20" type="text" value="0"></p>
+			</td>
+			<td valign="top" width="50%">
+			<p>Percent Clay:<br>
+			<input name="clay" size="20" type="text"></p>
+
+			<p>Graph Color:<br>
+			<select name="color"><option selected="selected" value="red">Red</option><option value="blue">Blue</option><option value="green">Green</option><option value="black">Black</option><option value="yellow">Yellow</option><option value="orange">Orange</option></select><br>
+			<br>
+			<input name="get_type" onclick="checkForm()" type="button" value="Get Type"> &nbsp; <input type="reset" value="Reset"><br>
+			Percent Silt:<br>
+			<input name="silt" readonly="true" size="20" type="text"><br>
+			Texture:<br>
+			<input name="texture" readonly="true" size="20" type="text"><br>
+			<br>
+			<input name="clear_graph" onclick=";if(canvas)canvas.clear();" type="button" value="Clear Graph"></p>
+
+			<p><font color="maroon"><em>*Optional</em></font></p>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<div id="myCanvas" style="width: 600px; height: 536px; position: relative;"><img align="right" height="536" name="triangle" src="./Soil Texture Calculator _ NRCS Soils_files/nrcs142p2_050619.jpg" width="600" title=""></div>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<script language="javascript">canvas = new jsGraphics("myCanvas");function drawPoint(x, y){        canvas.setColor(document.info.color.options[document.info.color.selectedIndex].value);    var xOff = 570;    var yOff = 482;    var yCoord = parseInt(yOff) - 477*parseFloat(y)*0.01;    var xCoord = parseInt(xOff) - 557*parseFloat(x)*0.01 - 0.5*parseFloat(y)*555*0.01;        canvas.fillEllipse(xCoord,yCoord,10,10);    canvas.paint();    }</script>
+				
+			
+		 
+		 
+		
+				
+			
+								
+				<br>
+			
+			
+			
+			<br>
+			
+	
+</div>
+				
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+	
+		
+</tbody></table>
+
+			
+		</td>
+		
+		 
+		</tr>
+</tbody></table>
+			</td>
+		</tr>
+		
+			
+		<tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<table class="layoutRow" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0">
+	
+	
+	<tbody><tr><td width="100%" valign="top" class="themetd"></td></tr> 
+		
+</tbody></table>
+
+			
+		</td>
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0">
+			
+		<tbody><tr class="themetd">
+			<td class="themetd" valign="top">
+			
+				     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<table summary="This table is used for page layout" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tbody><tr>
+			<td>
+				
+
+
+
+
+
+
+
+
+
+<!-- Begin WIDFooterNavPortletView.jsp -->
+
+
+
+
+
+
+
+<div id="footer" aria-label="footer menu">
+
+
+
+<p style="text-align:center;"> 
+				<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/site/national/home" name="lnkNR">NRCS Home</a>  |  <a target="_blank" href="http://www.usda.gov/" name="lnkUS">USDA.gov</a>  | <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/sitenav/soils/azindex">Site Map</a> |  <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/national/about/civilrights/" name="lnkPo">Civil Rights</a>  |  <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detailfull/national/about/?cid=NRCS143_021450" name="lnkFO">FOIA</a>  |  <a href="https://www.usda.gov/plain-writing" name="lnkPW">Plain Writing</a>  |  <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detailfull/national/about/?cid=nrcsdev11_000886" name="lnkAc">Accessibility Statement</a></p>
+
+				<p style="text-align:center;"> 
+	 <a href="https://www.usda.gov/policies-and-links" name="lnkPr">Policy and Links</a>| <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detailfull/national/about/?cid=nrcsdev11_000882" name="lnkNo">Non-Discrimination Statement</a> | <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detailfull/national/about/?cid=nrcsdev11_000881" name="lnkIn">Information Quality</a> | <a target="_blank" href="http://www.usa.gov/" name="lnkUS">USA.gov</a> | <a target="_blank" href="http://www.whitehouse.gov/" name="lnkWh">WhiteHouse.gov</a>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+/*dom.query(document).ready(function(){
+	dom.query('img').each(function(){
+		var title = dom.query(this).attr("title") == undefined ? dom.query(this).attr("alt") : dom.query(this).attr("title").trim();
+		dom.query(this).attr("title",title);
+	});
+})*/
+var dom_i = {};
+dom_i.query = jQuery.noConflict(true);
+
+dom_i.query(document).ready(function(){
+		var count = 1;
+		
+		
+		dom_i.query('img','.centerColImg').each(function(){
+		
+			var imgTitle = dom_i.query(this).attr("title") == undefined ? '' : dom_i.query(this).attr("title").trim();
+			
+			var imgAlt = dom_i.query(this).attr("alt") == undefined ? '' : dom_i.query(this).attr("alt").trim();					
+			var imgWidth = dom_i.query(this).css("width") == undefined ? 300 : dom_i.query(this).css("width").trim();
+			var imgMarginLeft = dom_i.query(this).css("margin-left") == undefined ? '' : dom_i.query(this).css("margin-left").trim();
+			var imgMarginRight = dom_i.query(this).css("margin-right") == undefined ? 10 : dom_i.query(this).css("margin-right").trim();			
+			var imgMarginTop = dom_i.query(this).css("margin-top") == undefined ? 10 : dom_i.query(this).css("margin-top").trim();
+			var imgMarginBottom = dom_i.query(this).css("margin-bottom") == undefined ? '' : dom_i.query(this).css("margin-bottom").trim();
+			var imgFloat = dom_i.query(this).css("float") == undefined ? "none" : dom_i.query(this).css("float").trim();
+			
+			
+			if(imgTitle != ''){
+	        	count = count+1;
+				if(imgWidth.indexOf("px") > 0){ 
+					imgWidth = imgWidth.replace("px","");
+				}
+				if(imgMarginLeft.indexOf("px") > 0){ 
+					imgMarginLeft = imgMarginLeft.replace("px","");
+				}
+				if(imgMarginRight.indexOf("px") > 0){ 
+					imgMarginRight = imgMarginRight.replace("px","");
+				}
+				if(imgMarginTop.indexOf("px") > 0){ 
+					imgMarginTop = imgMarginTop.replace("px","");
+				}
+				if(imgMarginBottom.indexOf("px") > 0){ 
+					imgMarginBottom = imgMarginBottom.replace("px","");
+				}
+				dom_i.query(this).css("float","none");
+				dom_i.query(this).css("margin","0");
+				
+				dom_i.query(this).addClass('img_'+count);
+
+				if(imgAlt != 'Broken Link' && imgAlt != ''  && imgAlt != 'offsite link image'){
+					if (imgTitle != '') { 
+					dom_i.query(this).after("<p class='img_"+count+"' style='line-height: 17px;margin: 0;padding: 0 4px 5px;font-size:12px;'>"+imgTitle+"</p>");
+					}else{
+					dom_i.query(this).after("<p class='img_"+count+"' style='line-height: 17px;margin: 0;padding: 0 4px 5px;font-size:12px;'></p>");
+					}
+					
+					dom_i.query('.img_'+count).wrapAll("<div style='width:"+(Number(imgWidth)+10) +"px;background-color: #f7f8f9 ;border: 1px solid #BCBEC0 ;border-radius: 3px;padding-top: 4px;text-align:center;float:"+imgFloat+";margin-left:"+Number(imgMarginLeft) +"px;margin-right:"+Number(imgMarginRight) +"px;margin-top:"+Number(imgMarginTop) +"px;margin-bottom:"+Number(imgMarginBottom) +"px;'></div>");
+				}
+			 
+			
+			//dom_i.query(imgDiv).append("");
+			
+			}else{
+				dom_i.query(this).attr("title",imgAlt);
+			}
+		});
+			
+	})
+	
+	
+//]]>
+
+</script>
+	
+</p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+ var $q = jQuery.noConflict(); 
+var bodyHeight = $q('body').height();
+
+if(bodyHeight!=0 && bodyHeight < 900){
+	var modifiedHeight = 900 -bodyHeight;
+	 $q('#footer').css({"margin-top":modifiedHeight});
+}
+//]]>
+</script>
+
+
+
+<!-- Google Analytics Code -->
+
+<!--Script for static google analytics trackers for USDA parent agency-->
+	<script type="text/JavaScript">
+	  var _gaq = _gaq || [];
+	 
+	  _gaq.push(['a._setAccount', 'UA-27627304-21']); 
+	  _gaq.push(['a._setDomainName', 'usda.gov']);
+	  _gaq.push(['a._setAllowLinker', true]);
+	  _gaq.push(['a._trackPageview']);
+	 
+	  _gaq.push(['b._setAccount', 'UA-27627304-1']); 
+	  _gaq.push(['b._setDomainName', 'usda.gov']);
+	  _gaq.push(['b._setAllowLinker', true]); 
+	  _gaq.push(['b._trackPageview']);
+	 
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+    </script>
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+	function googleAna(gkey, trackerName) {
+		try {
+			if(gkey!="null") {
+				//alert("Into footer "+trackerName);
+				_gaNRCS('create', gkey, 'auto', {'name': trackerName});	  
+				_gaNRCS(trackerName+'.send', 'pageview');	
+			}
+		} catch(err) {
+			//alert("Err Into googleAna "+err);
+		}
+	}
+	</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','_gaNRCS');
+	</script>
+
+	<script type="text/javascript" src="./Soil Texture Calculator _ NRCS Soils_files/jquery.leaveNotice.min.js.download"></script>
+	<link rel="stylesheet" type="text/css" href="./Soil Texture Calculator _ NRCS Soils_files/jquery.leaveNotice.css">		
+	
+	<script type="text/javascript">
+	
+			var getUrlParameter = function getUrlParameter(sParam) {
+			var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+				sURLVariables = sPageURL.split('&'),
+				sParameterName,
+				i;
+
+			for (i = 0; i < sURLVariables.length; i++) {
+				sParameterName = sURLVariables[i].split('=');
+
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : sParameterName[1];
+				}
+			}
+		};
+
+
+		$footerjs = jQuery.noConflict(); 
+		$footerjs(document).ready(function(){
+			//call pageview analytics
+			googleAna('UA-40186926-4', 'self');
+			googleAna('UA-24929183-1', 'parent');
+
+			//add action listener for document downloads.
+			$footerjs("a[href*='/wps/PA_NRCSConsumption/download?cid'],a[href*='/Internet/FSE_DOCUMENTS/'],a[href*='/Internet/FSE_MANUSCRIPTS/'],a[href*='/Internet/FSE_PLANTMATERIALS/']").click(function(event){
+				//alert("Into footer docClick");
+				try {
+				    var _lable = "";
+					_lable = event.target.href.substring(event.target.href.indexOf(event.target.pathname));
+					_gaNRCS('create', 'UA-40186926-4', 'auto', {'name': 'docClick'});	  
+					_gaNRCS('docClick.send', 'event', 'document-link', event.type, _lable);
+				} catch(err) {
+					//alert("Err Into footer "+err);
+				}
+			});
+		});
+		//Checking for custom form elements.
+		
+		if($footerjs('.customFormEmbed').length > 0){
+			
+			var cid = getUrlParameter('cid');
+			var isPreview = 'false';
+			if(!cid){
+				cid = "";
+			}
+			$footerjs( ".customFormEmbed" ).each(function( index ) {
+			
+				// alert($footerjs( this ).attr('id') );
+
+					var formID = $footerjs( this ).attr('id');
+					$footerjs.ajax({
+					
+					 url: '/wps/PA_NRCSConsumption/formbuilder/?formID='+formID+'&cid='+cid+'&isPreview='+isPreview,
+					 cache: false,
+					 success: function(data){
+							
+							  $footerjs('#'+formID).html(data);
+						}
+					});
+					
+			}	);
+		}
+	
+		if($footerjs('#btnCG').length >0){
+			
+			$footerjs('#btnCG').attr('disabled','disabled');
+			
+			$footerjs.ajax({
+				
+				url: '/wps/PA_NRCSConsumption/wid/CCGInfo.jsp',
+				cache: false,
+				success: function(data) {
+					
+				//	alert(data);
+					if(data != ''){
+				
+					$footerjs("#btnCG").before(data);
+						  
+					
+					}
+				}
+			});
+		}
+		
+		function imageHover(imageID){
+			
+			var $g = jQuery.noConflict();
+
+			$g(".imageHoverClass").remove();
+			$g(".popUpBroken").remove();
+			
+			
+			var imageWidth = $g("#"+imageID).width();
+			var isPreview = "false";
+			$g.ajax({
+				
+				url: '/wps/PA_NRCSConsumption/imageHover/?docName='+imageID+'&isPreview='+isPreview+'&width='+imageWidth,
+				cache: false,
+				success: function(data) {
+					
+					//alert(data);
+					if(data != ''){
+				
+						$g("#"+imageID).before(data);
+						  
+						checkExternalImageHover();
+					}
+				}
+			});
+		}
+		
+		function checkExternalImageHover(){
+
+		var comp = new RegExp("usda.gov","i");
+			
+		var $g = jQuery.noConflict();
+		
+		$g('.imageHoverClass a').each(function(){
+	
+        var hrefProp = $g(this).attr("href") == undefined ? '' : $g(this).attr("href").trim();
+
+		var aTagObj = $g(this);
+		var newWindow = $g(this).attr("target"); 
+		if(hrefProp == undefined){
+			hrefProp = '';
+		}
+		
+	     if((hrefProp.indexOf("http://")>=0 || hrefProp.indexOf("https://")>=0) && !comp.test(hrefProp) ){
+	      // a link that does not contain the current host		
+		  // a link is not present in the exception list
+		  
+						$g.ajax({
+								 async: false,
+								 type: 'GET',
+								 url: '/Internet/FSE_DOCUMENTS/nrcseprd406454.txt',
+								 success: function(data) {
+									  if(data.indexOf(hrefProp) < 0){
+									
+									//alert(aTagObj.attr("href"));
+									  if(newWindow == "_blank"){
+										aTagObj.addClass('ext_url_n');		
+									}else{
+									  aTagObj.addClass('ext_url');		
+									 }	
+									  aTagObj.after("&nbsp;<img src='/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/offsiteLink.gif' alt='offsite link image' style='position:absolute;margin-top:2px;'/>&nbsp;&nbsp;&nbsp;&nbsp;");							  
+									}
+								 }
+							});
+					}
+
+				});
+
+ 
+		$g('.ext_url_n').leaveNotice({
+							siteName:"Leaving Site Notification",
+							exitMessage:"<p>You have selected an external link. To access the link in a new window, click {URL}. </p>",
+							preLinkMessage:"<hr/><p>To remain on the Natural Resources Conservation Service website select 'Cancel' or press the ESC key</p><hr/>",
+							timeOut:10000,
+							newWindow: true
+						});
+		
+		$g('.ext_url').leaveNotice({
+							siteName:"Leaving Site Notification",
+							exitMessage:"<p>You have selected an external link and are being automatically redirected to {URL}. </p>",
+							preLinkMessage:"<hr/><p>To remain on the Natural Resources Conservation Service website select 'Cancel' or press the ESC key</p><hr/>",
+							timeOut:10000
+						});
+						
+						
+		
+		
+		}
+		function hideImageHoverDiv(){
+
+			 var $g = jQuery.noConflict();
+				
+			 $g(".imageHoverClass").remove();
+		}
+		
+		function loadEmptyForm(formID,saveType){
+			
+			var $g = jQuery.noConflict();
+					$g.ajax({
+					
+					 url: '/wps/PA_NRCSConsumption/formbuilder/?formID='+formID+'&saveType='+saveType,
+					 cache: false,
+					 success: function(data){
+							
+							  $g('#'+formID).html(data);
+						}
+					});
+		}
+		
+		function customFormButtonSubmit(formID){
+			
+			var $g = jQuery.noConflict();
+			
+			$g.ajax({			 
+			url: '/wps/PA_NRCSConsumption/formbuilder/?action=submit',
+			cache: false,
+			data: $g('#'+formID).serialize(), 
+			type: 'post',
+			success: function(data) {
+				if(data != ''){
+					//alert(data);
+					if(data.trim() == 'Form Data Saved'){
+						
+						loadEmptyForm(formID,'saveD');
+						
+
+					}else if(data.trim() == 'Form Data Saved and Email Sent'){
+						loadEmptyForm(formID,'saveDE');
+						
+						
+						
+					}else{
+
+						window.location.href = data;
+					}
+				}
+				
+			}
+		});
+		}
+		
+		
+		function checkCustomFormInfo(formID){
+		
+			var $g = jQuery.noConflict();
+
+			$g(".submitResponseClass").css({"display": "none"});
+		
+			var isFormValidArr = [true];
+			
+			$g("#"+formID+" :input").each(function(){
+				var fieldID = $g(this).attr("id");
+				var fieldName = $g(this).attr("name");
+				var fieldReqd = $g(this).attr("required");
+				var fieldVal = $g(this).val().trim();
+				var fieldType = $g(this).attr("fieldtype");
+				
+				if(fieldType){
+				
+					if(fieldType == 'inputEmail'){
+					
+						if(fieldVal.length > 1){
+							var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+							
+							if (filter.test(fieldVal)) {
+								
+								isFormValidArr.push(true);
+								
+								$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/correct_sign.jpg');
+							}else{
+								
+								isFormValidArr.push(false);
+								$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+							}
+
+						}else if(fieldReqd && fieldVal.length < 1){
+							
+							isFormValidArr.push(false);
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+						
+						}else if(!fieldReqd && fieldVal.length == 0){
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+						}
+						
+						
+						
+						
+					}else if(fieldType == 'inputText' && fieldReqd){
+						
+						if(fieldVal.length >= 2){
+							isFormValidArr.push(true);
+							
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/correct_sign.jpg');
+						}else{
+							isFormValidArr.push(false);
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+						}	
+					
+					}else if(fieldType == 'inputPhone'){
+						
+						if(fieldVal.length > 1){
+							var intRegex = /[0-9 -()+]+$/;
+							if (intRegex.test(fieldVal)) {
+								isFormValidArr.push(true);
+								$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/correct_sign.jpg');
+							}else{
+								isFormValidArr.push(false);
+								$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+							}
+						}else if(fieldReqd && fieldVal.length < 1){
+							
+							isFormValidArr.push(false);
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+						
+						}else if(!fieldReqd && fieldVal.length == 0){
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+						}
+						
+						
+					}else if(fieldType == 'dropDown' && fieldReqd){
+						if(fieldVal.length > 0){
+							isFormValidArr.push(true);
+							
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/correct_sign.jpg');
+						}else{
+							isFormValidArr.push(false);
+							$g('#'+fieldID+"_img").attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+						}	
+					
+					}
+				
+				}
+			});
+			
+			var isFormValid = false;
+			
+			for(var i=0;i<isFormValidArr.length;i++){
+				if(isFormValidArr[i]){
+					isFormValid = true;
+				}else{
+					isFormValid = false;
+					break;
+				}
+			}			
+			
+			if(isFormValid){
+				$g("#CF_Submit_"+formID).removeAttr('disabled');
+			}else{
+				$g("#CF_Submit_"+formID).attr('disabled','disabled');
+			}
+		}
+		function checkCCGInfo(){
+		
+			var $g = jQuery.noConflict();
+			var ccgName = false;
+			var ccgEmail = false;
+			var ccgPhone = false;
+			
+			var ccgNameVal = $g('#txtCGName').val();
+			var ccgEmailVal = $g('#txtCGEmail').val();
+			var ccgPhoneVal = $g('#txtCGPhone').val();
+			
+			if(ccgNameVal.length > 2){
+				ccgName = true;
+				$g('#imgCGName').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/correct_sign.jpg');
+			}else{
+				$g('#imgCGName').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+			}
+			
+			if(ccgEmailVal.length > 1){
+				var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+				if (filter.test(ccgEmailVal)) {
+					ccgEmail = true;
+					$g('#imgCGEmail').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/correct_sign.jpg');
+				}else{
+					$g('#imgCGEmail').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+				}
+
+			}else{
+				$g('#imgCGEmail').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+			}
+			
+			if(ccgPhoneVal.length > 1){
+				var intRegex = /[0-9 -()+]+$/;
+				if (intRegex.test(ccgPhoneVal)) {
+					ccgPhone = true;
+					$g('#imgCGPhone').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/correct_sign.jpg');
+				}else{
+					$g('#imgCGPhone').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+				}
+			}else{
+				$g('#imgCGPhone').attr('src','/NRCS_WIDTheme/themes/html/NRCS_WIDTheme/images/blank.gif');
+			}
+			
+			if(ccgName && ccgEmail && ccgPhone){
+			 
+			 document.getElementById('btnCG').disabled=false;
+				
+			}else{
+				document.getElementById('btnCG').disabled=true;
+			}
+			
+			
+		}
+		
+		function directToCGPage(directUrl){
+			
+		var $g = jQuery.noConflict();
+			var ccgNameVal = $g('#txtCGName').val();
+			var ccgEmailVal = $g('#txtCGEmail').val();
+			var ccgPhoneVal = $g('#txtCGPhone').val();
+			
+			var ccgTag = $g("#btnCG").prop("title");
+			var currUrl = window.location.href;
+			
+			$g.ajax({
+				
+				url: '/wps/PA_NRCSConsumption/submitcg/?cgName='+ccgNameVal+'&cgEmail='+ccgEmailVal+'&cgPhone='+ccgPhoneVal+'&cgUrl='+currUrl+"&cgTag="+ccgTag,
+				cache: false,
+				success: function(data) {
+					
+
+					if(data.trim() == 'Updated'){ 
+					window.location.href = directUrl;
+						  					
+					}
+				}
+			});
+		}
+	</script>
+	<!-- Google Analytics -->
+	
+	<!--Script for Adding GSA Digital Analytics Program (DAP) Federated Google Analytics Code -->
+	<script async="" type="text/javascript" id="_fed_an_ua_tag" src="./Soil Texture Calculator _ NRCS Soils_files/Universal-Federated-Analytics-Min.js.download"></script>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+			</td>
+		</tr>
+		
+	
+		
+</tbody></table>
+
+			
+		</td>
+		
+		
+		<td valign="top" style="width:1px;">
+			 
+ 
+ 
+
+ 
+ 
+ 
+
+
+<!--Rendering Table from UnlayeredContainer-V.jsp-->
+
+	
+	
+		
+		
+	
+<table summary="This table is used for page layout" class="themetable" border="0" width="100%" cellpadding="0" cellspacing="0">
+	
+	
+	<tbody><tr><td width="100%" valign="top" class="themetd"></td></tr> 
+		
+</tbody></table>
+
+			
+		</td>
+		
+		 
+		</tr>
+</tbody></table>
+			</td>
+		</tr>
+		
+	
+		
+</tbody></table>
+
+			
+		</td>
+		
+		 
+		</tr>
+</tbody></table>
+					</div>
+				</td>
+			</tr>
+		</tbody></table>	
+
+
+	
+	
+	
+
+
+ 
+
+ 
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancy-bg" id="fancy-bg-n"></div><div class="fancy-bg" id="fancy-bg-ne"></div><div class="fancy-bg" id="fancy-bg-e"></div><div class="fancy-bg" id="fancy-bg-se"></div><div class="fancy-bg" id="fancy-bg-s"></div><div class="fancy-bg" id="fancy-bg-sw"></div><div class="fancy-bg" id="fancy-bg-w"></div><div class="fancy-bg" id="fancy-bg-nw"></div><div id="fancybox-inner"></div><a id="fancybox-close"></a><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>
