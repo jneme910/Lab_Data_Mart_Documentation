@@ -1,0 +1,513 @@
+{
+  "lab_combine_nasis_ncss": {
+    "tableName": ["lab_combine_nasis_ncss"],
+    "fields": [
+      {
+        "name": "pedon_key",
+        "type": "character",
+        "nullable": false,
+        "unique": true,
+        "comment": "xxx"
+      },
+	  
+	  	        {
+        "name": "site_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "HP name"
+      },
+	  
+	   {
+        "name": "pedlabsampnum",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "HP name"
+      },
+	  
+	  	   {
+        "name": "pedoniid",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "HP name"
+      },
+	  
+	  	  	   {
+        "name": "upedonid",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "HP name"
+      }
+    ],
+    "primaryKey": ["pedon_key"],
+    "foreignKeys": [],
+    "indexes": [
+      {
+        "fields": ["pedon_key"],
+        "unique": [true]
+      }
+    ],
+    "display": {
+      "x": [-167],
+      "y": [-177],
+      "color": ["#9BC8FE"],
+      "comment": ["Human phenotypes (HP)"]
+    }
+  },
+  "lab_pedon": {
+    "tableName": ["lab_pedon"],
+    "fields": [
+      {
+        "name": "pedon_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+	  ,
+      {
+        "name": "pedlabsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "Alternative identifier"
+      }
+	  
+	  
+	  ,
+      {
+        "name": "userpedonid",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "Alternative identifier"
+      }
+	    ,
+	       {
+        "name": "site_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "Alternative identifier"
+      }
+	    
+	  
+	
+    ],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_combine_nasis_ncss"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
+    "indexes": [
+      {
+        "fields": ["pedon_key"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [-154],
+      "y": [-38],
+      "color": ["#9BC8FE"],
+      "comment": ["Alternative HP identifiers"]
+    },
+    "primaryKey": []
+  
+  },
+  "lab_chemical_properties": {
+    "tableName": ["lab_chemical_properties"],
+    "fields": [
+      {
+        "name": "db",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "Disease database"
+      },
+	        {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "Disease ID"
+      },
+	  
+	 	        {
+        "name": "result_source_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "Disease ID"
+      },
+	   
+	 	 	        {
+        "name": "prep_code",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "Disease ID"
+      }
+    ],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_layer"],
+        "key": [
+          {
+            "from": "labsampnum",
+            "to": "labsampnum"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+
+    ],
+    "indexes": [
+      {
+        "fields": ["labsampnum"],
+        "unique": [false]
+      },
+      {
+        "fields": ["result_source_key", "prep_code"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [-550],
+      "y": [-202],
+      "color": ["#D9D9D9"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": []
+  },
+  
+    "lab_physical_properties": {
+    "tableName": ["lab_physical_properties"],
+    "fields": [
+      {
+        "name": "db",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	        {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	  
+	 	        {
+        "name": "result_source_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	   
+	 	 	        {
+        "name": "prep_code",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_layer"],
+        "key": [
+          {
+            "from": "labsampnum",
+            "to": "labsampnum"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+
+    ],
+    "indexes": [
+      {
+        "fields": ["labsampnum"],
+        "unique": [false]
+      },
+      {
+        "fields": ["result_source_key", "prep_code"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [-850],
+      "y": [-100],
+      "color": ["#D9D9D9"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": []
+  },
+  
+      "lab_calculations_including_estimates_and_default_values": {
+    "tableName": ["lab_calculations_including_estimates_and_default_values"],
+    "fields": [
+      {
+        "name": "db",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	        {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	  
+	 	        {
+        "name": "result_source_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	   
+	 	 	        {
+        "name": "prep_code",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_layer"],
+        "key": [
+          {
+            "from": "labsampnum",
+            "to": "labsampnum"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+
+    ],
+    "indexes": [
+      {
+        "fields": ["labsampnum"],
+        "unique": [false]
+      },
+      {
+        "fields": ["result_source_key", "prep_code"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [-450],
+      "y": [200],
+      "color": ["#D9D9D9"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": []
+  },
+
+
+  "lab_webmap": {
+    "tableName": ["lab_webmap"],
+    "fields": [
+      {
+        "name": "pedon_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	  
+       {
+        "name": "wmiid",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	  
+	  	  
+	       {
+        "name": "userpedonid",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	  
+
+      {
+        "name": "peiid",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_combine_nasis_ncss"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
+    "indexes": [
+      {
+        "fields": ["pedon_key"],
+        "unique": [false]
+      },
+      {
+        "fields": ["peiid"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [-101],
+      "y": [-360],
+      "color": ["#F67FC4"],
+      "comment": ["Indirect descendants of human phenotypes"]
+    },
+    "primaryKey": []
+  },
+  "lab_layer": {
+    "tableName": ["lab_layer"],
+    "fields": [
+      {
+        "name": "pedon_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "pedon_key"
+      },
+      {
+        "name": "lab_layer_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxxx"
+      },
+	  
+	       {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxxx"
+      },
+	  
+	  	       {
+        "name": "project_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxxx"
+      },
+	  
+	  	  	       {
+        "name": "site_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxxx"
+      }
+    ],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_combine_nasis_ncss"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+	  ,
+      {
+        "refTable": ["lab_pedon"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
+    "indexes": {},
+    "display": {
+      "x": [-560],
+      "y": [-36],
+      "color": ["#9BC8FE"],
+      "comment": ["xxxxx"]
+    },
+    "primaryKey": []
+  },
+    "lab_site": {
+    "tableName": ["lab_site"],
+    "fields": [
+      {
+        "name": "site_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+	  
+	      {
+        "name": "usersiteid",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_pedon"],
+        "key": [
+          {
+            "from": "site_key",
+            "to": "site_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
+    "indexes": [
+      {
+        "fields": ["site_key"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [100],
+      "y": [50],
+      "color": ["#F67FC4"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": []
+  }
+  
+}
