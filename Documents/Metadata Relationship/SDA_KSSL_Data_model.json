@@ -4,7 +4,7 @@
     "fields": [
       {
         "name": "pedon_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": true,
         "comment": "xxx"
@@ -18,7 +18,7 @@
       },
       {
         "name": "pedlabsampnum",
-        "type": "integer",
+        "type": "character",
         "nullable": false,
         "unique": false,
         "comment": "KSSL"
@@ -32,25 +32,154 @@
       },
       {
         "name": "upedonid",
-        "type": "integer",
+        "type": "character",
         "nullable": false,
         "unique": false,
         "comment": "KSSL"
+      },
+      {
+        "name": "country_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": true,
+        "comment": ""
+      },
+      {
+        "name": "state_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": true,
+        "comment": ""
+      },
+      {
+        "name": "county_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": true,
+        "comment": ""
+      },
+      {
+        "name": "ssa_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": true,
+        "comment": ""
+      },
+      {
+        "name": "npark_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": true,
+        "comment": ""
+      },
+      {
+        "name": "nforest_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": true,
+        "comment": ""
       }
     ],
-    "primaryKey": ["pedon_key"],
-    "foreignKeys": [],
+    "primaryKey": ["country_key", "county_key", "nforest_key", "npark_key", "pedlabsampnum", "pedon_key", "site_key", "ssa_key", "state_key"],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_pedon"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_layer"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_webmap"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_site"],
+        "key": [
+          {
+            "from": "site_key",
+            "to": "site_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_area"],
+        "key": [
+          {
+            "from": "country_key",
+            "to": "area_key"
+          },
+          {
+            "from": "state_key",
+            "to": "area_key"
+          },
+          {
+            "from": "county_key",
+            "to": "area_key"
+          },
+          {
+            "from": "ssa_key",
+            "to": "area_key"
+          },
+          {
+            "from": "npark_key",
+            "to": "area_key"
+          },
+          {
+            "from": "nforest_key",
+            "to": "area_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
     "indexes": [
       {
         "fields": ["pedon_key"],
         "unique": [true]
+      },
+      {
+        "fields": ["pedlabsampnum", "pedon_key", "site_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["country_key", "county_key", "state_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["country_key", "county_key", "nforest_key", "npark_key", "ssa_key", "state_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["country_key", "county_key", "nforest_key", "npark_key", "pedlabsampnum", "pedon_key", "site_key", "ssa_key", "state_key"],
+        "unique": [true]
       }
     ],
     "display": {
-      "x": [-167],
-      "y": [-177],
+      "x": [-567],
+      "y": [-140],
       "color": ["#9BC8FE"],
-      "comment": ["Human phenotypes (HP)"]
+      "comment": ["xxx"]
     }
   },
   "lab_pedon": {
@@ -58,7 +187,7 @@
     "fields": [
       {
         "name": "pedon_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": true,
         "comment": "xxx"
@@ -79,7 +208,7 @@
       },
       {
         "name": "site_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": true,
         "comment": "Alternative identifier"
@@ -87,7 +216,17 @@
     ],
     "foreignKeys": [
       {
-        "refTable": ["lab_combine_nasis_ncss"],
+        "refTable": ["lab_site"],
+        "key": [
+          {
+            "from": "site_key",
+            "to": "site_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_layer"],
         "key": [
           {
             "from": "pedon_key",
@@ -105,36 +244,33 @@
       {
         "fields": ["site_key"],
         "unique": [true]
+      },
+      {
+        "fields": ["pedlabsampnum", "pedon_key", "site_key"],
+        "unique": [true]
       }
     ],
     "display": {
-      "x": [-154],
-      "y": [-38],
-      "color": ["#9BC8FE"],
-      "comment": ["Alternative HP identifiers"]
+      "x": [-138],
+      "y": [-350],
+      "color": ["#C6BDF1"],
+      "comment": ["xxx"]
     },
-    "primaryKey": []
+    "primaryKey": ["pedlabsampnum", "pedon_key", "site_key"]
   },
   "lab_chemical_properties": {
     "tableName": ["lab_chemical_properties"],
     "fields": [
       {
-        "name": "db",
-        "type": "character",
-        "nullable": false,
-        "unique": false,
-        "comment": "KSSL database"
-      },
-      {
         "name": "labsampnum",
         "type": "character",
         "nullable": false,
-        "unique": false,
+        "unique": true,
         "comment": "KSSL ID"
       },
       {
         "name": "result_source_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": false,
         "comment": "KSSL ID"
@@ -147,22 +283,11 @@
         "comment": "KSSL ID"
       }
     ],
-    "foreignKeys": [
-      {
-        "refTable": ["lab_layer"],
-        "key": [
-          {
-            "from": "labsampnum",
-            "to": "labsampnum"
-          }
-        ],
-        "cardinality": [0, -1, 1, 1]
-      }
-    ],
+    "foreignKeys": [],
     "indexes": [
       {
         "fields": ["labsampnum"],
-        "unique": [false]
+        "unique": [true]
       },
       {
         "fields": ["prep_code", "result_source_key"],
@@ -170,33 +295,26 @@
       }
     ],
     "display": {
-      "x": [-550],
-      "y": [-202],
+      "x": [550],
+      "y": [94],
       "color": ["#D9D9D9"],
       "comment": ["xxx"]
     },
-    "primaryKey": []
+    "primaryKey": ["labsampnum"]
   },
   "lab_physical_properties": {
     "tableName": ["lab_physical_properties"],
     "fields": [
       {
-        "name": "db",
-        "type": "character",
-        "nullable": false,
-        "unique": false,
-        "comment": "xxx"
-      },
-      {
         "name": "labsampnum",
         "type": "character",
         "nullable": false,
-        "unique": false,
+        "unique": true,
         "comment": "xxx"
       },
       {
         "name": "result_source_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": false,
         "comment": "xxx"
@@ -209,22 +327,11 @@
         "comment": "xxx"
       }
     ],
-    "foreignKeys": [
-      {
-        "refTable": ["lab_layer"],
-        "key": [
-          {
-            "from": "labsampnum",
-            "to": "labsampnum"
-          }
-        ],
-        "cardinality": [0, -1, 1, 1]
-      }
-    ],
+    "foreignKeys": [],
     "indexes": [
       {
         "fields": ["labsampnum"],
-        "unique": [false]
+        "unique": [true]
       },
       {
         "fields": ["prep_code", "result_source_key"],
@@ -232,33 +339,26 @@
       }
     ],
     "display": {
-      "x": [-850],
-      "y": [-100],
+      "x": [242],
+      "y": [-346],
       "color": ["#D9D9D9"],
       "comment": ["xxx"]
     },
-    "primaryKey": []
+    "primaryKey": ["labsampnum"]
   },
   "lab_calculations_including_estimates_and_default_values": {
     "tableName": ["lab_calculations_including_estimates_and_default_values"],
     "fields": [
       {
-        "name": "db",
-        "type": "character",
-        "nullable": false,
-        "unique": false,
-        "comment": "xxx"
-      },
-      {
         "name": "labsampnum",
         "type": "character",
         "nullable": false,
-        "unique": false,
+        "unique": true,
         "comment": "xxx"
       },
       {
         "name": "result_source_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": false,
         "comment": "xxx"
@@ -271,22 +371,11 @@
         "comment": "xxx"
       }
     ],
-    "foreignKeys": [
-      {
-        "refTable": ["lab_layer"],
-        "key": [
-          {
-            "from": "labsampnum",
-            "to": "labsampnum"
-          }
-        ],
-        "cardinality": [0, -1, 1, 1]
-      }
-    ],
+    "foreignKeys": [],
     "indexes": [
       {
         "fields": ["labsampnum"],
-        "unique": [false]
+        "unique": [true]
       },
       {
         "fields": ["prep_code", "result_source_key"],
@@ -294,26 +383,26 @@
       }
     ],
     "display": {
-      "x": [-450],
-      "y": [200],
+      "x": [-308],
+      "y": [246],
       "color": ["#D9D9D9"],
       "comment": ["xxx"]
     },
-    "primaryKey": []
+    "primaryKey": ["labsampnum"]
   },
   "lab_webmap": {
     "tableName": ["lab_webmap"],
     "fields": [
       {
         "name": "pedon_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
-        "unique": false,
+        "unique": true,
         "comment": "xxx"
       },
       {
         "name": "wmiid",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": false,
         "comment": "xxx"
@@ -327,55 +416,48 @@
       },
       {
         "name": "peiid",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": false,
         "comment": "xxx"
       }
     ],
-    "foreignKeys": [
-      {
-        "refTable": ["lab_combine_nasis_ncss"],
-        "key": [
-          {
-            "from": "pedon_key",
-            "to": "pedon_key"
-          }
-        ],
-        "cardinality": [0, -1, 1, 1]
-      }
-    ],
+    "foreignKeys": [],
     "indexes": [
       {
         "fields": ["pedon_key"],
-        "unique": [false]
+        "unique": [true]
       },
       {
         "fields": ["peiid"],
         "unique": [false]
+      },
+      {
+        "fields": ["pedon_key", "peiid"],
+        "unique": [true]
       }
     ],
     "display": {
-      "x": [-101],
-      "y": [-360],
-      "color": ["#F67FC4"],
-      "comment": ["Indirect descendants of human phenotypes"]
+      "x": [-593],
+      "y": [-457],
+      "color": ["#A9ECC9"],
+      "comment": ["xxx"]
     },
-    "primaryKey": []
+    "primaryKey": ["pedon_key", "peiid"]
   },
   "lab_layer": {
     "tableName": ["lab_layer"],
     "fields": [
       {
         "name": "pedon_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
-        "unique": false,
+        "unique": true,
         "comment": "pedon_key"
       },
       {
         "name": "lab_layer_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": false,
         "comment": "xxxx"
@@ -389,36 +471,76 @@
       },
       {
         "name": "project_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
         "unique": false,
         "comment": "xxxx"
       },
       {
         "name": "site_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
-        "unique": false,
+        "unique": true,
         "comment": "xxxx"
       }
     ],
     "foreignKeys": [
       {
-        "refTable": ["lab_combine_nasis_ncss"],
+        "refTable": ["lab_physical_properties"],
         "key": [
           {
-            "from": "pedon_key",
-            "to": "pedon_key"
+            "from": "labsampnum",
+            "to": "labsampnum"
           }
         ],
         "cardinality": [0, -1, 1, 1]
       },
       {
-        "refTable": ["lab_pedon"],
+        "refTable": ["lab_rosetta_Key"],
         "key": [
           {
-            "from": "pedon_key",
-            "to": "pedon_key"
+            "from": "labsampnum",
+            "to": "labsampnum"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_mineralogy_glass_count"],
+        "key": [
+          {
+            "from": "labsampnum",
+            "to": "labsampnum"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_major_and_trace_elements_and_oxides"],
+        "key": [
+          {
+            "from": "labsampnum",
+            "to": "labsampnum"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_xray_and_thermal"],
+        "key": [
+          {
+            "from": "labsampnum",
+            "to": "labsampnum"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_calculations_including_estimates_and_default_values"],
+        "key": [
+          {
+            "from": "labsampnum",
+            "to": "labsampnum"
           }
         ],
         "cardinality": [0, -1, 1, 1]
@@ -428,24 +550,36 @@
       {
         "fields": ["labsampnum"],
         "unique": [true]
+      },
+      {
+        "fields": ["pedon_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["site_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["labsampnum", "pedon_key"],
+        "unique": [true]
       }
     ],
     "display": {
-      "x": [-560],
-      "y": [-36],
-      "color": ["#9BC8FE"],
+      "x": [-213],
+      "y": [-85],
+      "color": ["#C6BDF1"],
       "comment": ["xxxxx"]
     },
-    "primaryKey": []
+    "primaryKey": ["labsampnum", "pedon_key"]
   },
   "lab_site": {
     "tableName": ["lab_site"],
     "fields": [
       {
         "name": "site_key",
-        "type": "character",
+        "type": "integer",
         "nullable": false,
-        "unique": false,
+        "unique": true,
         "comment": "xxx"
       },
       {
@@ -456,30 +590,225 @@
         "comment": "xxx"
       }
     ],
-    "foreignKeys": [
-      {
-        "refTable": ["lab_pedon"],
-        "key": [
-          {
-            "from": "site_key",
-            "to": "site_key"
-          }
-        ],
-        "cardinality": [0, -1, 1, 1]
-      }
-    ],
+    "foreignKeys": [],
     "indexes": [
       {
         "fields": ["site_key"],
+        "unique": [true]
+      }
+    ],
+    "display": {
+      "x": [-146],
+      "y": [-560],
+      "color": ["#A9ECC9"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": ["site_key"]
+  },
+  "lab_major_and_trace_elements_and_oxides": {
+    "tableName": ["lab_major_and_trace_elements_and_oxides"],
+    "fields": [
+      {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": true,
+        "comment": "xxx"
+      },
+      {
+        "name": "result_source_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+      {
+        "name": "prep_code",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [],
+    "indexes": [
+      {
+        "fields": ["labsampnum"],
+        "unique": [true]
+      },
+      {
+        "fields": ["prep_code", "result_source_key"],
         "unique": [false]
       }
     ],
     "display": {
-      "x": [100],
-      "y": [50],
-      "color": ["#F67FC4"],
+      "x": [375],
+      "y": [228],
+      "color": ["#D9D9D9"],
       "comment": ["xxx"]
     },
-    "primaryKey": []
+    "primaryKey": ["labsampnum"]
+  },
+  "lab_mineralogy_glass_count": {
+    "tableName": ["lab_mineralogy_glass_count"],
+    "fields": [
+      {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": true,
+        "comment": "xxx"
+      },
+      {
+        "name": "result_source_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+      {
+        "name": "prep_code",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [],
+    "indexes": [
+      {
+        "fields": ["labsampnum"],
+        "unique": [true]
+      },
+      {
+        "fields": ["prep_code", "result_source_key"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [560],
+      "y": [-78],
+      "color": ["#D9D9D9"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": ["labsampnum"]
+  },
+  "lab_rosetta_Key": {
+    "tableName": ["lab_rosetta_Key"],
+    "fields": [
+      {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": true,
+        "comment": "xxx"
+      },
+      {
+        "name": "result_source_key",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+      {
+        "name": "prep_code",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [],
+    "indexes": [
+      {
+        "fields": ["labsampnum"],
+        "unique": [true]
+      },
+      {
+        "fields": ["prep_code", "result_source_key"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [468],
+      "y": [-234],
+      "color": ["#D9D9D9"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": ["labsampnum"]
+  },
+  "lab_xray_and_thermal": {
+    "tableName": ["lab_xray_and_thermal"],
+    "fields": [
+      {
+        "name": "labsampnum",
+        "type": "character",
+        "nullable": false,
+        "unique": true,
+        "comment": "xxx"
+      },
+      {
+        "name": "result_source_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      },
+      {
+        "name": "prep_code",
+        "type": "character",
+        "nullable": false,
+        "unique": false,
+        "comment": "xxx"
+      }
+    ],
+    "foreignKeys": [],
+    "indexes": [
+      {
+        "fields": ["labsampnum"],
+        "unique": [true]
+      },
+      {
+        "fields": ["prep_code", "result_source_key"],
+        "unique": [false]
+      }
+    ],
+    "display": {
+      "x": [61],
+      "y": [278],
+      "color": ["#D9D9D9"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": ["labsampnum"]
+  },
+  "lab_area": {
+    "tableName": ["lab_area"],
+    "fields": [
+      {
+        "name": "area_key",
+        "type": "integer",
+        "nullable": false,
+        "unique": true,
+        "comment": ""
+      }
+    ],
+    "foreignKeys": [],
+    "indexes": [
+      {
+        "fields": ["area_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["area_key", "area_key", "area_key", "area_key", "area_key", "area_key"],
+        "unique": [true]
+      }
+    ],
+    "display": {
+      "x": [-591],
+      "y": [51],
+      "color": ["#F8DEC3"],
+      "comment": ["xxx"]
+    },
+    "primaryKey": ["area_key"]
   }
 }
