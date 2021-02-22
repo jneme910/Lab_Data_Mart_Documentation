@@ -14,28 +14,28 @@
         "type": "integer",
         "nullable": false,
         "unique": false,
-        "comment": "HP name"
+        "comment": "KSSL"
       },
       {
         "name": "pedlabsampnum",
         "type": "integer",
         "nullable": false,
         "unique": false,
-        "comment": "HP name"
+        "comment": "KSSL"
       },
       {
         "name": "pedoniid",
         "type": "integer",
         "nullable": false,
         "unique": false,
-        "comment": "HP name"
+        "comment": "KSSL"
       },
       {
         "name": "upedonid",
         "type": "integer",
         "nullable": false,
         "unique": false,
-        "comment": "HP name"
+        "comment": "KSSL"
       }
     ],
     "primaryKey": ["pedon_key"],
@@ -123,28 +123,28 @@
         "type": "character",
         "nullable": false,
         "unique": false,
-        "comment": "Disease database"
+        "comment": "KSSL database"
       },
       {
         "name": "labsampnum",
         "type": "character",
         "nullable": false,
         "unique": false,
-        "comment": "Disease ID"
+        "comment": "KSSL ID"
       },
       {
         "name": "result_source_key",
         "type": "character",
         "nullable": false,
         "unique": false,
-        "comment": "Disease ID"
+        "comment": "KSSL ID"
       },
       {
         "name": "prep_code",
         "type": "character",
         "nullable": false,
         "unique": false,
-        "comment": "Disease ID"
+        "comment": "KSSL ID"
       }
     ],
     "foreignKeys": [
