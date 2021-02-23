@@ -41,54 +41,104 @@
         "name": "country_key",
         "type": "integer",
         "nullable": false,
-        "unique": true,
+        "unique": false,
         "comment": "A Foreign key for a Country  (integer) that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       },
       {
         "name": "state_key",
         "type": "integer",
         "nullable": false,
-        "unique": true,
+        "unique": false,
         "comment": "A Foreign key for a State (integer)  that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       },
       {
         "name": "county_key",
         "type": "integer",
         "nullable": false,
-        "unique": true,
+        "unique": false,
         "comment": "A Foreign key for a County (integer)  that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       },
       {
         "name": "ssa_key",
         "type": "integer",
         "nullable": false,
-        "unique": true,
+        "unique": false,
         "comment": "A Foreign key for a Soil Survey Area (integer)  r) that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       },
       {
         "name": "npark_key",
         "type": "integer",
         "nullable": false,
-        "unique": true,
+        "unique": false,
         "comment": "A Foreign key for a National Park (integer)  that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       },
       {
         "name": "nforest_key",
         "type": "integer",
         "nullable": false,
-        "unique": true,
+        "unique": false,
         "comment": "A Foreign key for a National Forest (integer)  that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       }
     ],
-    "primaryKey": [ "pedlabsampnum", "pedon_key", "site_key"],
-    "foreignKeys": [],
-
+    "primaryKey": ["pedlabsampnum", "pedon_key", "site_key"],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_layer"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_pedon"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_webmap"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_site"],
+        "key": [
+          {
+            "from": "site_key",
+            "to": "site_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
     "display": {
       "x": [-567],
       "y": [-140],
       "color": ["#9BC8FE"],
       "comment": ["This table is a linkage betwwen NASIS Pedon morphological and the Lab data. This table stores information about locations, layers or horizons of a pedon that has had samples submitted to the SSL at the National Soil Survey Center or one of the various laboratories at NCSS cooperating universities. Data is periodically transferred from the SSL database to this table."]
-    }
+    },
+    "indexes": [
+      {
+        "fields": ["pedlabsampnum", "pedon_key", "site_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["country_key", "county_key", "nforest_key", "npark_key", "ssa_key", "state_key"],
+        "unique": [true]
+      }
+    ]
   },
   "lab_pedon": {
     "tableName": ["lab_pedon"],
@@ -710,7 +760,38 @@
         "comment": "An State internal ID (integer) that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       }
     ],
-    "foreignKeys": [],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_combine_nasis_ncss"],
+        "key": [
+          {
+            "from": "area_key",
+            "to": "country_key"
+          },
+          {
+            "from": "area_key",
+            "to": "state_key"
+          },
+          {
+            "from": "area_key",
+            "to": "county_key"
+          },
+          {
+            "from": "area_key",
+            "to": "ssa_key"
+          },
+          {
+            "from": "area_key",
+            "to": "npark_key"
+          },
+          {
+            "from": "area_key",
+            "to": "nforest_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
     "indexes": [
       {
         "fields": ["area_key"],
@@ -801,7 +882,7 @@
         "comment": "Foreign key to the source system table. Defines the origin of the data."
       }
     ],
-    "foreignKeys": {},
+    "foreignKeys": [],
     "indexes": [
       {
         "fields": ["procedure_key"],
@@ -838,7 +919,7 @@
         "comment": "A character string containing the physical name of a column in the LIMS database."
       }
     ],
-    "foreignKeys": {},
+    "foreignKeys": [],
     "indexes": [
       {
         "fields": ["analyte_key"],

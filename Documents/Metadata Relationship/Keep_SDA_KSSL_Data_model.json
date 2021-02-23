@@ -80,9 +80,101 @@
         "comment": "A Foreign key for a National Forest (integer)  that is part (or all) of a key that uniquely identifies a record. Also known as part (or all) of the \"primary key\". "
       }
     ],
-    "primaryKey": [ "pedlabsampnum", "pedon_key", "site_key"],
-    "foreignKeys": [],
-
+    "primaryKey": ["country_key", "county_key", "nforest_key", "npark_key", "pedlabsampnum", "pedon_key", "site_key", "ssa_key", "state_key"],
+    "foreignKeys": [
+      {
+        "refTable": ["lab_pedon"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_layer"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_webmap"],
+        "key": [
+          {
+            "from": "pedon_key",
+            "to": "pedon_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_site"],
+        "key": [
+          {
+            "from": "site_key",
+            "to": "site_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      },
+      {
+        "refTable": ["lab_area"],
+        "key": [
+          {
+            "from": "country_key",
+            "to": "area_key"
+          },
+          {
+            "from": "state_key",
+            "to": "area_key"
+          },
+          {
+            "from": "county_key",
+            "to": "area_key"
+          },
+          {
+            "from": "ssa_key",
+            "to": "area_key"
+          },
+          {
+            "from": "npark_key",
+            "to": "area_key"
+          },
+          {
+            "from": "nforest_key",
+            "to": "area_key"
+          }
+        ],
+        "cardinality": [0, -1, 1, 1]
+      }
+    ],
+    "indexes": [
+      {
+        "fields": ["pedon_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["pedlabsampnum", "pedon_key", "site_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["country_key", "county_key", "state_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["country_key", "county_key", "nforest_key", "npark_key", "ssa_key", "state_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["country_key", "county_key", "nforest_key", "npark_key", "pedlabsampnum", "pedon_key", "site_key", "ssa_key", "state_key"],
+        "unique": [true]
+      }
+    ],
     "display": {
       "x": [-567],
       "y": [-140],
@@ -714,6 +806,10 @@
     "indexes": [
       {
         "fields": ["area_key"],
+        "unique": [true]
+      },
+      {
+        "fields": ["area_key", "area_key", "area_key", "area_key", "area_key", "area_key"],
         "unique": [true]
       }
     ],
