@@ -12,7 +12,7 @@ Project Pieces
 2. https://github.com/dylanbeaudette/process-kssl-snapshot/tree/master/QC 
 
 ### Data Model
-1. [Soil Data Access Lab Datamodel Diagram](https://jneme910.github.io/Lab_Data_Mart_Documentation/Documents/SDA_KSSL_Data_model.html)
+1. [Soil Data Access Lab Data model Diagram](https://jneme910.github.io/Lab_Data_Mart_Documentation/Documents/SDA_KSSL_Data_model.html)
 
 
 
