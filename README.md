@@ -14,6 +14,11 @@ Project Pieces
 ### Data Model
 1. [Soil Data Access Lab Data model Diagram](https://jneme910.github.io/Lab_Data_Mart_Documentation/Documents/SDA_KSSL_Data_model.html)
 
+### Andrew Brown 
+1. http://humus.rocks/SoilOntology/ncss_analyte_graph.html
+2. http://humus.rocks/SoilOntology/ncss_procedure_graph.html 
+
+
 
 
 
