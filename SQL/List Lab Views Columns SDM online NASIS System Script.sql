@@ -1,0 +1,9 @@
+USE sdmONLINE;
+
+SELECT --TABLE_CATALOG, TABLE_SCHEMA,
+CONCAT ('WHEN tablab = ', QuoteName (TABLE_NAME, '''') , 'AND collab = ' , QuoteName (COLUMN_NAME, '''') , ' THEN ' , QuoteName ('Yes', ''''))  AS nasis_script,
+
+
+TABLE_NAME, COLUMN_NAME --, COLUMN_DEFAULT
+FROM sdmONLINE.INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME LIKE 'lab%';
