@@ -10,6 +10,7 @@ Project Pieces
  
 1. https://github.com/ncss-tech/lab-data-delivery/tree/master/code/snapshot-preparation/data-distributions 
 2. https://github.com/dylanbeaudette/process-kssl-snapshot/tree/master/QC 
+3. http://ncss-tech.github.io/soilDB/docs/reference/KSSL_VG_model.html
 
 ### Data Model
 1. [Soil Data Access Lab Data model Diagram](https://jneme910.github.io/Lab_Data_Mart_Documentation/Documents/SDA_KSSL_Data_model.html)
@@ -17,6 +18,8 @@ Project Pieces
 ### Andrew Brown 
 1. http://humus.rocks/SoilOntology/ncss_analyte_graph.html
 2. http://humus.rocks/SoilOntology/ncss_procedure_graph.html 
+
+
 
 
 
