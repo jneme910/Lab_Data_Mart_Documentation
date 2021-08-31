@@ -131,7 +131,7 @@ select schema_name(tab.schema_id) as schema_name,
         left join sys.computed_columns as cc
             on tab.object_id = cc.object_id
            and col.column_id = cc.column_id
-		   WHERE tab.name  IN ('lab_area','lab_analyte', 'lab_pedon', 'lab_analysis_procedure', 'lab_Calculations_Including_Estimates_And_Default_Values', 'lab_Chemical_Properties', 'lab_pedon', 'lab_Major_And_Trace_Elements_And_Oxides', 'lab_method_code',  'lab_Mineralogy_Glass_Count', 'lab_Physical_Properties',  'lab_webmap', 'lab_XRay_And_Thermal', 'lab_site', 'lab_rosetta_key', 'lab_combine_nasis_ncss', 'lab_preparation', 'lab_layer' )
+		  
   order by schema_name,
         table_name, 
         column_name; 

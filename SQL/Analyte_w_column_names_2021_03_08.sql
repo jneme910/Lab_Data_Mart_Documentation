@@ -4,7 +4,188 @@ DROP TABLE IF EXISTS #temp_analyte;
 DROP TABLE IF EXISTS #temp_analyte2;
 
 SELECT  [analyte_key]
-,CASE WHEN  analyte_key  IN (61, 67, 678) THEN 'ca_nh4_ph_7'
+,CASE 
+WHEN analyte_key = 397 THEN 'AM_Amphibole_X_Ray'
+WHEN analyte_key = 398 THEN 'LC_Anacime_X_Ray'
+WHEN analyte_key = 399 THEN 'AE_Anatase_X_Ray'
+WHEN analyte_key = 400 THEN 'AG_Antigoite_X_Ray'
+WHEN analyte_key = 401 THEN 'AO_Aragonite_X_Ray'
+WHEN analyte_key = 402 THEN 'BT_Biotite_X_Ray'
+WHEN analyte_key = 403 THEN 'BC_Biotite_Chlorite_X_Ray'
+WHEN analyte_key = 404 THEN 'BR_Brucite_X_Ray'
+WHEN analyte_key = 405 THEN 'CA_Calcite_X_Ray'
+WHEN analyte_key = 406 THEN 'CL_Chlorite_X_Ray'
+WHEN analyte_key = 407 THEN 'CM_Chlorite_Mica_X_Ray'
+WHEN analyte_key = 408 THEN 'CR_Cristobalite_X_Ray'
+WHEN analyte_key = 409 THEN 'DL_Dolomite_X_Ray'
+WHEN analyte_key = 410 THEN 'EN_Enstatite_X_Ray'
+WHEN analyte_key = 411 THEN 'D_Feldspar_X_Ray'
+WHEN analyte_key = 412 THEN 'GI_Gibbsite_X_Ray'
+WHEN analyte_key = 413 THEN 'GL_Glauconite_X_Ray'
+WHEN analyte_key = 414 THEN 'GE_Geothite_X_Ray'
+WHEN analyte_key = 415 THEN 'GY_Gypsum_X_Ray'
+WHEN analyte_key = 416 THEN 'KH_Halloysite_X_Ray'
+WHEN analyte_key = 417 THEN 'HE_Hematite_X_Ray'
+WHEN analyte_key = 418 THEN 'HN_Hornblende_X_Ray'
+WHEN analyte_key = 419 THEN 'HB_Hydrobiotite_X_Ray'
+WHEN analyte_key = 420 THEN 'IL_Illite_Hydromuscovite_X_Ray'
+WHEN analyte_key = 421 THEN 'KK_Kaolinite_X_Ray'
+WHEN analyte_key = 422 THEN 'FL_Labradorite_X_Ray'
+WHEN analyte_key = 423 THEN 'LE_Lepidocrocite_X_Ray'
+WHEN analyte_key = 424 THEN 'MH_Maghemite_X_Ray'
+WHEN analyte_key = 425 THEN 'MG_Magnetite_X_Ray'
+WHEN analyte_key = 426 THEN 'MI_Mica_X_Ray'
+WHEN analyte_key = 427 THEN 'MT_Montmorillonite_X_Ray'
+WHEN analyte_key = 428 THEN 'MC_Montmorillonite_Chlorite_X_Ray'
+WHEN analyte_key = 429 THEN 'MM_Montmorillonite_Mica_X_Ray'
+WHEN analyte_key = 430 THEN 'MV_Montmorillonite_Vermiculite_X_Ray'
+WHEN analyte_key = 431 THEN 'MS_Muscovite_X_Ray'
+WHEN analyte_key = 432 THEN 'NX_Non_Crystalline_X_Ray'
+WHEN analyte_key = 433 THEN 'FO_Oligoclase_X_Ray'
+WHEN analyte_key = 434 THEN 'FR_Orthoclase_X_Ray'
+WHEN analyte_key = 435 THEN 'PG_Palygorskite_X_Ray'
+WHEN analyte_key = 436 THEN 'PL_Phlogophite_X_Ray'
+WHEN analyte_key = 437 THEN 'FP_Plagioclase_Feldspar_X_Ray'
+WHEN analyte_key = 438 THEN 'FK_Potassium_Feldspar_X_Ray'
+WHEN analyte_key = 439 THEN 'PY_Pyrophyllite_X_Ray'
+WHEN analyte_key = 440 THEN 'QZ_Quartz_X_Ray'
+WHEN analyte_key = 441 THEN 'RE_Resistant_Minerals_X_Ray'
+WHEN analyte_key = 442 THEN 'SE_Sepiolite_X_Ray'
+WHEN analyte_key = 443 THEN 'TA_Talc_X_Ray'
+WHEN analyte_key = 444 THEN 'TH_Thenardite_X_Ray'
+WHEN analyte_key = 445 THEN 'TD_Tridymite_X_Ray'
+WHEN analyte_key = 446 THEN 'VR_Vermiculite_X_Ray'
+WHEN analyte_key = 447 THEN 'VC_Vermiculite_Chlorite_X_Ray'
+WHEN analyte_key = 448 THEN 'VH_Vermiculite_Hydrobiotite_X_Ray'
+WHEN analyte_key = 449 THEN 'VM_Vermiculite_Mica_X_Ray'
+WHEN analyte_key = 450 THEN 'ZE_Zeolite_X_Ray'
+WHEN analyte_key = 811 THEN 'HA_Halite_X_Ray'
+WHEN analyte_key = 812 THEN 'HS_Hydroxy_Interlayered_Smectite_X_Ray'
+WHEN analyte_key = 813 THEN 'HV_Hydroxy_Interlayered_Vermiculite_X_Ray'
+WHEN analyte_key = 1122 THEN 'FT_Fluorapatite_x_ray'
+WHEN analyte_key = 1123 THEN 'NU_Natrojarosite_X_Ray'
+WHEN analyte_key = 1201 THEN 'HA_PT_Paragonite_X_Ray'
+WHEN analyte_key = 1231 THEN 'NA_Natron_X_Ray'
+WHEN analyte_key = 1242 THEN 'JO_Jarosite_X_Ray'
+WHEN analyte_key = 1751 THEN 'SZ_Serpentine_X_Ray'
+WHEN analyte_key = 2085 THEN 'BE_Boehmite_X_Ray'
+WHEN analyte_key = 2172 THEN 'BD_Beidellite_X_Ray'
+WHEN analyte_key IN ( 1099, 1524, 1884,1883, 1886, 1433, 1525, 1885) THEN 'Clay_Mineral_Interpretation'
+WHEN analyte_key IN ( 1148, 1185, 1434,  1149, 1186, 1435) THEN 'Fine_Sand_Mineral_Interpretation'
+WHEN analyte_key IN ( 1150,1187,  1436) THEN 'Very_Fine_Sand_Mineral_Interpretation'
+WHEN analyte_key =  42 THEN 'GI_Gibbsite_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 43 THEN 'KK_Kaolinite_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 2157 THEN 'GE_Geothite_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 2158 THEN 'GY_Gypsum_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 2159 THEN  'AT_Alunite_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 2160 THEN 'SM_Smectite_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 2161 THEN 'KH_Halloysite_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 2162 THEN 'QZ_Quartz_Differential_Scanning_Calorimetry'
+WHEN analyte_key = 2163 THEN 'VR_Vermiculite_Differential_Calorimetry'
+WHEN analyte_key = 364 THEN 'AG_Gypsum_Thermal_Gravimetric_Analysis'
+WHEN analyte_key = 365 THEN 'GI_Gibbsite_Thermal_Gravimetric_Analysis'
+WHEN analyte_key = 366 THEN 'GE_Kaolinite_Differential_Thermal_Analysis'
+WHEN analyte_key  = 367 THEN 'KK_Kaolinite_Thermal_Gravimetric_Analysis'
+WHEN analyte_key  = 1205 THEN 'AG_Antigorite_Thermal_Gravimetric_Analysis'
+WHEN analyte_key  =   1758 THEN 'KH_Halloysite_Thermal_Gravimetric_Analysis'
+WHEN analyte_key  =   1759 THEN 'MT_Montmorillonite_Thermal_Gravimetric_Analysis'
+WHEN analyte_key  = 1760 THEN 'PG_Palygorskite_Thermal_Gravimetric_Analysis'
+WHEN analyte_key  =  1881 THEN 'CA_Calcite_Thermal_Gravimetric_Analysis'
+WHEN analyte_key  = 809 THEN 'GI_Gibbsite_Differential_Thermal_Analysis'
+WHEN analyte_key  = 810 THEN 'KK_Kaolinite_Differential_Thermal_Analysis'
+WHEN analyte_key =  814 THEN 'GE_Geothite_Differential_Thermal_Analysis'
+WHEN analyte_key = 815 THEN 'KH_Halloysite_Differential_thermal_Analysi'
+WHEN analyte_key = 816 THEN 'QZ_Quartz_Differential_Thermal_Analysis'
+WHEN analyte_key IN (4, 25, 28) THEN 'bulk_density_3rd_bar_for_calc'
+WHEN analyte_key IN ( 243, 242) THEN 'particle_density_for_calc'
+WHEN analyte_key IN ( 590,591) THEN 'bulk_density_oven_dry_ws'
+WHEN analyte_key = 593 THEN 'bulk_density_saturated_whole_soil'
+WHEN analyte_key = 574 THEN 'volume_pct_lt_2_mm_third_ws'
+WHEN analyte_key = 583 THEN 'volume_pct_usda_sand_ws'
+WHEN analyte_key = 576 THEN 'vol_pct_usda_silt_third_bar_ws'
+WHEN analyte_key = 573 THEN 'volume_pct_usda_clay_ws'
+WHEN analyte_key = 555 THEN 'pct_pores_drained_third_bar_ws'
+WHEN analyte_key = 556 THEN 'pct_pores_filled_third_bar_ws'
+WHEN analyte_key = 599 THEN 'wt_pct_gt_2_mm_clay_free_ws'
+WHEN analyte_key = 612 THEN 'wt_pct_2_75_mm_clay_free_ws'
+WHEN analyte_key = 611 THEN 'wt_pct_2_20_mm_clay_free_ws'
+WHEN analyte_key = 604 THEN 'wt_pct_sand_clay_free_ws'
+WHEN analyte_key = 602 THEN 'wt_pct_silt_clay_free_ws'
+WHEN analyte_key = 596 THEN 'wt_pct_tot_clay_clay_free_ws'
+WHEN analyte_key = 609 THEN 'wt_pct_vcs_clay_free_lt2mmbase'
+WHEN analyte_key = 608 THEN 'wt_pct_cs_clay_free_lt2mmbase'
+WHEN analyte_key = 607 THEN 'wt_pct_ms_clay_free_lt2mmbase'
+WHEN analyte_key = 605 THEN 'wt_pct_fs_clay_free_lt2mmbase'
+WHEN analyte_key = 587 THEN 'wt_pct_vfs_clay_free_lt2mmbase'
+WHEN analyte_key = 603 THEN 'wt_pct_csi_clay_free_lt2mmbase'
+WHEN analyte_key = 601 THEN 'wt_pct_fsi_clay_free_lt2mmbase'
+WHEN analyte_key = 595 THEN 'wt_pct_clay_clay_free_2_mm_base'
+WHEN analyte_key = 628 THEN 'wf_25'
+WHEN analyte_key = 631 THEN 'wf_520'
+WHEN analyte_key = 630 THEN 'wf_2075'
+WHEN analyte_key = 606 THEN 'wf_0175'
+WHEN analyte_key = 547 THEN 'percent_passing_3_inch_sieve'
+WHEN analyte_key = 516 THEN 'bulk_density_whole_soil_moist'
+WHEN analyte_key = 600 THEN 'weight_percent_gt_2_mm_ws'
+WHEN analyte_key = 614 THEN 'weight_percent_gt_250_mm_ws'
+WHEN analyte_key = 617 THEN 'weight_pct_75_to_250_mm_ws'
+WHEN analyte_key = 610 THEN 'weight_pct_2_to_75_mm_ws'
+WHEN analyte_key = 613 THEN 'weight_pct_20_to_75_mm_ws'
+WHEN analyte_key = 615 THEN 'weight_pct_5_to_20_mm_ws'
+WHEN analyte_key = 525 THEN 'cumulative_curve_lt_1_fourth_mm'
+WHEN analyte_key = 524 THEN 'cumulative_curve_lt_1_tenth_mm'
+WHEN analyte_key = 523 THEN 'cumulative_curve_lt_5_hundredths'
+WHEN analyte_key = 530 THEN 'cumulative_curve_size_lt_60_pe'
+WHEN analyte_key = 529 THEN 'cumulative_curve_size_lt_50_pe'
+WHEN analyte_key = 527 THEN 'cumulative_curve_size_lt_10_pe'
+WHEN analyte_key = 534 THEN 'gradiation_uniformity'
+WHEN analyte_key = 533 THEN 'gradation_curvature'
+WHEN analyte_key = 538 THEN 'le_third_ovendry_whole_soil'
+WHEN analyte_key = 537 THEN 'le_third_bar_to_oven_dry_rewet'
+WHEN analyte_key = 539 THEN 'le_third_fifteen_whole_soil'
+WHEN analyte_key = 571 THEN 'void_ratio_third_bar_lt_2_mm'
+WHEN analyte_key = 572 THEN 'void_ratio_third_bar_whole_soil'
+WHEN analyte_key = 586 THEN 'pores_drained_third_bar_ws'
+WHEN analyte_key = 556 THEN 'pores_filled_third_bar_ws'
+WHEN analyte_key = 594 THEN 'weight_pct_2_to_5_mm_ws'
+WHEN analyte_key = 598 THEN 'weight_pct_less_than_2_mm_ws'
+WHEN analyte_key = 575 THEN 'volume_pct_gt_2_mm_thirdbar_ws'
+WHEN analyte_key = 580 THEN 'volume_pct_gt_250_mm_thirdbar_ws'
+WHEN analyte_key = 582 THEN 'volume_pct_75_to_250_mm_thirdbar_ws'
+WHEN analyte_key = 578 THEN 'volume_pct_2_to_75_mm_third_ws'
+WHEN analyte_key = 579 THEN 'volume_pct_20_to_75_mm_thirdbar_ws'
+WHEN analyte_key = 581 THEN 'volume_pct_5_to_20_mm_third_ws'
+WHEN analyte_key = 577 THEN 'volume_pct_2_to_5_mm_third_ws'
+WHEN analyte_key = 544 THEN 'percent_passing_2_inch_sieve'
+WHEN analyte_key = 542 THEN 'percent_passing_1_and_1_half'
+WHEN analyte_key = 543 THEN 'percent_passing_1_inch_sieve'
+WHEN analyte_key = 548 THEN 'percent_passing_3_quarter_inch'
+WHEN analyte_key = 549 THEN 'percent_passing_3_eights_inch'
+WHEN analyte_key = 553 THEN 'percent_passing_no_4_sieve'
+WHEN analyte_key = 551 THEN 'percent_passing_no_10_sieve'
+WHEN analyte_key = 554 THEN 'percent_passing_no_40_sieve'
+WHEN analyte_key = 552 THEN 'percent_passing_no_200_sieve'
+WHEN analyte_key = 546 THEN 'percent_passing_20_micron_sieve'
+WHEN analyte_key = 550 THEN 'percent_passing_5_micron_sieve'
+WHEN analyte_key = 545 THEN 'percent_passing_2_micron_sieve'
+WHEN analyte_key = 528 THEN 'cumulative_curve_less_than_1mm'
+WHEN analyte_key = 526 THEN 'cumulative_curve_lt_1_half_mm'
+/*
+analyte_key	column_name
+631	frag_5_20_mm_wt_pct_lt_75
+630	frag_20_75_mm_wt_pct_lt_75
+628	frag_2_5_mm_wt_pct_lt_75
+606	wt_pct_1_tenth_to_75_mm
+
+analyte_key	column_name
+600	total_frag_wt_pct_gt_2_mm_ws chem
+*/
+
+
+
+
+
+WHEN  analyte_key  IN (61, 67, 678) THEN 'ca_nh4_ph_7'
 WHEN analyte_key IN (63, 69, 680) THEN 'mg_nh4_ph_7'
 WHEN analyte_key IN ( 65, 71, 682) THEN 'na_nh4_ph_7'
 WHEN analyte_key IN (64, 70, 681) THEN 'k_nh4_ph_7'
@@ -17,14 +198,14 @@ WHEN analyte_key IN (45, 460) THEN 'total_carbon_ncs'
 WHEN analyte_key IN (79, 461) THEN 'total_nitrogen_ncs'
 WHEN analyte_key IN (362, 462) THEN 'total_sulfur_ncs'
 WHEN analyte_key = 780 THEN 'organic_carbon_walkley_black'
-WHEN analyte_key = 52 THEN 'fe_dithionite_citrate_extract'
+WHEN analyte_key = 52 THEN 'fe_dithionite_citrate_extractable'
 WHEN analyte_key = 51 THEN 'aluminum_dithionite_citrate'
 WHEN analyte_key = 53 THEN 'manganese_dithionite_citrate'
 WHEN analyte_key = 452 THEN 'ammoniumoxalate_opticaldensity'
 WHEN analyte_key = 46 THEN 'aluminum_ammonium_oxalate'
 WHEN analyte_key = 50 THEN 'silica_ammonium_oxalate'
 WHEN analyte_key = 48 THEN 'manganese_ammonium_oxalate'
-WHEN analyte_key = 58 THEN 'carbon_sodium_pyro_phospate'
+WHEN analyte_key = 58 THEN 'carbon_sodium_pyro_phosphate'
 WHEN analyte_key = 59 THEN 'iron_sodium_pyro_phosphate'
 WHEN analyte_key = 57 THEN 'aluminum_na_pyro_phosphate'
 WHEN analyte_key = 60 THEN 'manganese_na_pyro_phosphate'
@@ -35,7 +216,7 @@ WHEN analyte_key = 456 THEN 'ph_saturated_paste'
 WHEN analyte_key = 246 THEN 'ph_oxidized'
 WHEN analyte_key = 1147 THEN 'ph_oxidized_initial'
 WHEN analyte_key = 245 THEN 'ph_naf'
-WHEN analyte_key = 1363 THEN 'ph_water_extract'
+WHEN analyte_key = 1363 THEN 'ph_water_extractable'
 WHEN analyte_key = 41 THEN 'caco3_lt_2_mm'
 WHEN analyte_key = 485 THEN 'corrected_gypsum_lt_2_mm'
 WHEN analyte_key = 358 THEN 'resistivity_saturated_paste'
@@ -79,10 +260,10 @@ WHEN analyte_key = 1354 THEN 'bromide_water_extractable'
 WHEN analyte_key = 1369 THEN 'cadmium_water_extractable'
 WHEN analyte_key = 1368 THEN 'calcium_water_extractable'
 WHEN analyte_key = 1355 THEN  'chloride_water_extractable'
-WHEN analyte_key = 1371 THEN 'chromium_water_extractabe'
+WHEN analyte_key = 1371 THEN 'chromium_water_extractable'
 WHEN analyte_key = 1370 THEN 'cobalt_water_extractable'
-WHEN analyte_key = 1372 THEN 'copper_water_extracable'
-WHEN analyte_key = 1364 THEN 'ec_water_extract'
+WHEN analyte_key = 1372 THEN 'copper_water_extractable'
+WHEN analyte_key = 1364 THEN 'ec_water_extractable'
 WHEN analyte_key = 1356 THEN 'fluoride_water_extractable'
 WHEN analyte_key = 1373 THEN 'iron_water_extractable'
 WHEN analyte_key = 1381 THEN 'lead_water_extractable'
@@ -115,7 +296,7 @@ WHEN analyte_key = 1339 THEN 'iron_mehlich3_extractable'
 WHEN analyte_key = 1346 THEN 'lead_mehlich3_extractable'
 WHEN analyte_key = 1341 THEN 'magnesium_mehlich3_extractable'
 WHEN analyte_key = 1342 THEN 'manganese_mehlich3_extractable'
-WHEN analyte_key = 1349 THEN 'molybdenum_mehlich3_extractabl'
+WHEN analyte_key = 1349 THEN 'molybdenum_mehlich3_extractable'
 WHEN analyte_key = 1344 THEN 'nickel_mehlich3_extractable'
 WHEN analyte_key = 1345 THEN 'phosphorus_mehlich3_extractable'
 WHEN analyte_key = 1340 THEN 'potassium_mehlich3_extractable'
@@ -136,7 +317,7 @@ WHEN analyte_key IN (514, 658, 659, 660, 661, 662, 663, 664, 665, 724, 728, 730,
 WHEN analyte_key IN (513, 666, 667, 733, 734, 735, 793, 1297, 1298, 1447, 2100, 1156, 1295, 1449, 1296,  1045, 1294, 1448, 1165, 1166, 1293) THEN 'base_sat_nh4oac_ph_7'
 WHEN analyte_key IN (794, 1070, 1238,2021,2022) THEN 'estimated_organic_carbon'
 WHEN analyte_key IN ( 559, 647, 1078,  1076, 2086,  1077, 1079) THEN 'carbon_to_nitrogen_ratio'
-WHEN analyte_key IN (1071, 1090, 1851, 1072, 1091, 1848, 1095, 1849,  1074, 1093, 1850, 1075, 1094, 1846, 1073, 1092, 1847) THEN 'aluminum_plus_half_iron_oxalat'
+WHEN analyte_key IN (1071, 1090, 1851, 1072, 1091, 1848, 1095, 1849,  1074, 1093, 1850, 1075, 1094, 1846, 1073, 1092, 1847) THEN 'aluminum_plus_half_iron_oxalate'
 WHEN analyte_key = 623 THEN 'caco3_lt_20_mm'
 WHEN analyte_key = 624 THEN 'gypsum_lt_20_mm'
 WHEN analyte_key = 1930 THEN 'ca_to_mg_ratio'
@@ -144,7 +325,7 @@ WHEN analyte_key IN (570, 1030, 1522, 2096, 1171, 1329, 1523, 2097, 1172,1173) T
 WHEN analyte_key IN ( 531, 620, 651, 668, 669, 670, 675, 676, 677, 754, 755, 756, 757, 758, 759, 760, 761, 762, 800, 801, 1444, 1445, 1446, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1174, 1177, 
 1183, 1175, 1178, 1176, 1179) THEN 'exchangeable_sodium'
 WHEN analyte_key IN ( 563, 636, 803, 1520, 2094, 1180, 1521, 2095,   1181,1182) THEN 'sodium_absorption_ratio'
-WHEN analyte_key IN ( 1887,   1888) THEN 'phosphorus_anion_resin_capacit'
+WHEN analyte_key IN ( 1887,   1888) THEN 'phosphorus_anion_resin_capacity'
 WHEN  analyte_key = 491 THEN 'aluminum_major_element'
 WHEN analyte_key = 490 THEN 'calcium_major_element'
 WHEN analyte_key = 492 THEN 'iron_major_element'
@@ -332,8 +513,147 @@ WHEN analyte_key = 223 THEN 'SU_Sulfur_Petro_Count'
 WHEN analyte_key = 224 THEN 'TA_Talc_Petro_Count'
 WHEN analyte_key = 225 THEN  'TP_Topaz_Petro_Count'
 WHEN analyte_key = 226 THEN 'TM_Tourmaline_Petro_Count'
-WHEN
+WHEN analyte_key = 227 THEN 'TE_Tremolite_Petro_Count'
+WHEN analyte_key = 228 THEN 'VR_Vermiculite_Petro_Count'
+WHEN analyte_key = 229 THEN 'VC_Vermiculite_Chlorite_Petro_Count'
+WHEN analyte_key = 230 THEN 'VH_Vermiculite_Hydrobiotite_Petro_Count'
+WHEN analyte_key = 231 THEN 'VM_Vermiculite_Mica_Petro_Count'
+WHEN analyte_key = 232 THEN 'VI_Vivianite_Petro_Count'
+WHEN analyte_key = 233 THEN 'WV_Wavellite_Petro_Count'
+WHEN analyte_key = 234 THEN 'AR_Weatherable_Aggregates_Petro_Count'
+WHEN analyte_key = 235 THEN 'WE_Weatherable_Mineral_petro_Count'
+WHEN analyte_key = 236 THEN 'ZE_Zeolite_Petro_Count'
+WHEN analyte_key = 237 THEN 'ZR_Zircon_Petro_Count'
+WHEN analyte_key = 238 THEN 'ZO_Zoisite_Petro_Count'
+WHEN analyte_key = 463 THEN 'AI_Aegirine_Augite_Petro_Count'
+WHEN analyte_key = 464 THEN 'AL_Allophane_Petro_Count'
+WHEN analyte_key = 465 THEN 'CE_Cobaltite_Petro_Count'
+WHEN analyte_key = 466 THEN 'HA_Halite_Petro_Count'
+WHEN analyte_key = 467 THEN 'IL_Illite_Hydromuscovite_Petro_Count'
+WHEN analyte_key = 468 THEN 'LC_Analcime_Petro_Count'
+WHEN analyte_key = 469 THEN 'LE_Lepidocrocite_Petro_Count'
+WHEN analyte_key = 470 THEN 'LI_Leucite_Petro_Count'
+WHEN analyte_key = 472 THEN 'MH_Maghemite_Petro_Count'
+WHEN analyte_key = 473 THEN 'MM_Montmorillonite_Mica_Petro_Count'
+WHEN analyte_key = 474 THEN 'MV_Montmorillonite_Vermiculite_Petro_Count'
+WHEN analyte_key = 475 THEN 'PA_Palagonite_Petro_Count'
+WHEN analyte_key = 476 THEN 'PG_Palygorskite_Petro_Count'
+WHEN analyte_key = 477 THEN 'SC_Scapolite_Petro_Count'
+WHEN analyte_key = 478 THEN 'SE_Sepiolite_Petro_Count'
+WHEN analyte_key = 479 THEN 'SM_Smectite_Petro_Count'
+WHEN analyte_key = 480 THEN 'TD_Tridymite_Petro_Count'
+WHEN analyte_key = 481 THEN 'TH_Thenardite_Petro_Count'
+WHEN analyte_key = 808 THEN 'HY_Hypersthene_Petro_Count'
+WHEN analyte_key = 1259 THEN 'HS_Hydroxy_Interlayer_Smectite_Petro_Count'
+WHEN analyte_key = 1260 THEN 'HV_Hydroxy_Interlayer_Vermiculite_Petro_Count'
+WHEN analyte_key = 1262 THEN 'PM_Pumice_Petro_Count'
+WHEN analyte_key = 1771 THEN 'SZ_Serpentine_Petro_Count'
+WHEN analyte_key = 823 THEN 'Total_Grains_Counted'
+WHEN analyte_key  IN (644, 645, 646, 1080, 1081, 1082) THEN 'analyte_size_frac_base'
+WHEN analyte_key IN (1125, 1126, 1127, 1437, 1438, 1439) THEN 'Resistant_Minerals_Total_Mineral_Soil'
+WHEN analyte_key IN (1148, 1149, 1150,1185, 1186, 1187, 1434, 1435, 1436) THEN 'Glass_Count_Mineral_Interpretation'
+WHEN analyte_key = 471 THEN 'MC_Montmorillonite_Chlorite_Petro_Count'
+WHEN analyte_key IN (282, 313, 1576, 1537, 1526) THEN 'clay_total'
+WHEN analyte_key IN (1567, 1546, 1535, 567, 687, 673, 1056, 1053, 642) THEN 'silt_total'
+WHEN analyte_key IN (1569, 1544, 1533, 565,685,  671, 1057,  1054, 640) THEN 'sand_total'
+WHEN analyte_key IN (284, 315) THEN 'clay_fine'
+WHEN  analyte_key IN ( 283, 314) THEN 'clay_caco3'
+WHEN analyte_key IN ( 291, 322, 1532, 1570) THEN 'silt_fine'
+WHEN analyte_key IN (1568, 1534, 566, 686, 672, 1058, 1055, 641) THEN 'silt_coarse'
+WHEN analyte_key IN (290, 321, 1531, 1542, 1571) THEN 'sand_very_fine'
+WHEN analyte_key IN (   287, 318, 1528, 1539, 1574) THEN 'sand_fine'
+WHEN analyte_key IN (  288, 319, 1529, 1540, 1573 ) THEN 'sand_medium'
+WHEN analyte_key IN (286, 317, 1527, 1538, 1575) THEN 'sand_coarse'
+WHEN analyte_key IN ( 289, 320, 1530, 1541, 1572) THEN 'sand_very_coarse'
+WHEN analyte_key   = 628 THEN 'frag_2_5_mm_wt_pct_lt_75'
+WHEN analyte_key = 1039 THEN 'frag__2_20_mm_wt_pct_lt_75'
+WHEN analyte_key  = 631 THEN 'frag_5_20_mm_wt_pct_lt_75'
+WHEN analyte_key  = 630 THEN 'frag_20_75_mm_wt_pct_lt_75'
+WHEN analyte_key = 600 THEN 'total_frag_wt_pct_gt_2_mm_ws'
+WHEN analyte_key = 606 THEN 'wt_pct_1_tenth_to_75_mm'
+WHEN analyte_key = 10 THEN 'bulk_density_tenth_bar'
+WHEN analyte_key = 4 THEN 'bulk_density_third_bar'
+WHEN analyte_key = 5 THEN 'bulk_density_oven_dry'
+WHEN analyte_key = 786 THEN 'bulk_density_lt_2_mm_air_dry'
+WHEN analyte_key = 16 THEN 'bd_third_bar_lt2_reconstituted'
+WHEN analyte_key = 17 THEN 'bulk_den_ovendry_reconstituted'
+WHEN analyte_key IN ( 19, 21, 22, 1772) THEN 'bulk_density_field_moist'
+WHEN analyte_key = 242 THEN 'particle_density_less_than_2mm'
+WHEN analyte_key = 243 THEN 'particle_density_gt_2_mm'
+WHEN analyte_key = 625 THEN 'cole_whole_soil'
+WHEN analyte_key  =  540 THEN 'le_third_fifteen_lt2_mm'
+WHEN analyte_key  = 536 THEN 'le_third_ovendry_lt_2_mm'
+WHEN analyte_key = 541 THEN 'le_field_moist_to_oben_dry'
+WHEN analyte_key  = 1924 THEN 'water_retention_0_bar_sieve'
+WHEN analyte_key IN ( 6, 11, 390) THEN 'water_retention_6_hundredths'
+WHEN analyte_key IN (  8, 391, 13) THEN 'water_retention_10th_bar'
+WHEN analyte_key IN (   9, 392, 14, 18) THEN 'water_retention_third_bar'
+WHEN analyte_key IN (7, 393, 1040) THEN 'water_retention_1_bar'
+WHEN analyte_key IN (15, 1041, 395) THEN'water_retention_2_bar'
+WHEN analyte_key = 2173 THEN 'water_retention_3_bar_sieve'
+WHEN analyte_key = 1241 THEN 'water_retention_5_bar_sieve'
+WHEN analyte_key IN (394, 785) THEN 'water_retention_15_bar'
+WHEN analyte_key IN  (458, 459, 20, 30) THEN 'water_retention_field_state'
+WHEN analyte_key = 396 THEN 'airdry_ovendry_ratio' 
+WHEN analyte_key = 557 THEN 'atterberg_plasticity_index'
+WHEN analyte_key = 3 THEN 'plastic_limit'
+WHEN analyte_key = 1 THEN 'aggregate_stability_05_2_mm'
+WHEN analyte_key = 562 THEN 'le_to_clay_third_bar_to_ovendry'
+WHEN analyte_key IN ( 558, 1049) THEN 'water_15_bar_to_clay_ratio'
+WHEN analyte_key IN (  797, 743, 741, 739, 649, 622, 560, 1047) THEN 'cec7_clay_ratio'
+WHEN analyte_key IN  (564, 656, 657, 745, 746, 747) THEN 'effective_cec_to_clay_ratio'
+WHEN analyte_key = 1769 THEN 'sand_total_ethanol_dispersible'
+WHEN analyte_key = 1770 THEN 'silt_total_ethanol_dispersible'
+WHEN analyte_key = 1763 THEN 'clay_total_ethanol_dispersible'
+WHEN analyte_key = 1764 THEN ' sand_very_fine_ethanol_dispersible'
+WHEN analyte_key = 1765 THEN 'sand_fine_ethanol_dispersible'
+WHEN analyte_key = 1766 THEN 'sand_medium_ethanol_dispersible'
+WHEN analyte_key = 1767 THEN 'sand_coarse_ethanol_dispersible'
+WHEN analyte_key = 1768 THEN 'sand_very_coarse_ethanol_dispersible'
+WHEN analyte_key IN (332, 339, 342) THEN 'clay_tot_h2o_dispersible'
+WHEN analyte_key IN ( 331, 1189) THEN 'clay_fine_h2o_dispersible'
+WHEN analyte_key IN (330, 1188) THEN 'clay_co3_h2o_dispersible'
+WHEN analyte_key IN ( 638, 1018, 1197, 1060, 1905, 1066, 1063) THEN 'silt_total_h2o_dispersible'
+WHEN analyte_key IN (338, 1027, 1195, 341) THEN  'silt_fine_h2o_dispersible'
+WHEN analyte_key IN ( 639 ,  1029, 1196, 1061, 1906, 1064, 1067) THEN 'silt_coarse_h2o_dispersible'
+WHEN analyte_key IN (637, 1028, 1198, 1059, 1904,  1065,1062) THEN 'sand_total_h2o_dispersible'
+WHEN analyte_key IN (337, 1026, 1194) THEN 'sand_vf_h2o_dispersible'
+WHEN analyte_key IN  (334, 1023, 1191) THEN 'sand_fine_h2o_dispersible'
+WHEN analyte_key IN  (335, 1024, 1192) THEN 'sand_medium_h2o_dispersible'
+WHEN analyte_key IN ( 333, 1022, 1190   ) THEN 'sand_coarse_h2o_dispersible'
+WHEN analyte_key IN ( 336, 1025, 1193     ) THEN 'sand_vc_h2o_dispersible'
+WHEN analyte_key = 239 THEN 'color_pyrophosphate_extractable'
+WHEN analyte_key = 24 THEN 'bd_thirdbar_before_rewet_organ'
+WHEN analyte_key = 25 THEN 'bd_thirdbar_rewet_organic_soil'
+WHEN analyte_key = 23 THEN  'bulk_den_rewet_oven_dry' 
+WHEN analyte_key = 76 THEN 'mineral_content_loss_on_ignition'
+WHEN analyte_key = 775 THEN 'estimated_organic_matter'
+WHEN analyte_key = 776 THEN 'estimated_om_plus_mineral'
+WHEN analyte_key = 241 THEN 'fiber_unrubbed'
+WHEN analyte_key = 240 THEN 'fiber_rubbed'
+WHEN analyte_key = 777 THEN 'decomposition_state'
+WHEN analyte_key = 778 THEN 'limnic_material_type'
+WHEN analyte_key = 2 THEN 'atterberg_liquid_limit'
+WHEN analyte_key IN (1566, 1547, 1536, 569, 674, 1068,     1069, 643) THEN 'texture_lab'
+
+--2141, 546 -- Physical Properties but no analysis name
+/* Glass_Count_Mineral_Interpretation AND XRAY
+1148
+1149
+1150
+1185
+1186
+1187
+1434
+1435
+1436
+
+analyte_key	column_name
+556	pct_pores_filled_third_bar_ws
+555	pct_pores_drained_third_bar_ws
+*/
 END AS [column_name]
+
       ,[analyte_type]
       ,[analyte_name]
       ,[analyte_abbrev]
@@ -347,20 +667,28 @@ END AS [column_name]
       ,[analyte_desc]
       ,[analyte_size_frac_base]
 INTO #temp_analyte
-  FROM [sdmONLINE].[dbo].[lab_analyte] WHERE [analyte_key] IN (
-                          80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 817, 93, 94, 95, 96, 97, 98, 99, 100,
-                          101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118,
-                          119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136,
-                          137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154,
-                          155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172,
-                          173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190,
-                          191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208,
-                          209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226,
-                          227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 463, 464, 465, 466, 467, 468,
-                          469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 808, 1243, 1261, 1259, 1260,
-                          1262, 1771, 644, 645, 646, 1080, 1081, 1082, 1125, 1126, 1127, 1437, 1438, 1439, 1148, 1185,
-                          1434, 1149, 1186, 1435, 1150, 1187, 1436, 823
-                                  )
+  FROM [sdmONLINE].[dbo].[lab_analyte] --WHERE [analyte_key] IN (
+  --544, 542, 543, 548, 549, 553, 551, 554, 552, 546, 550, 545, 528, 526)
+/*
+I used result light table analyte list and that counted each analyte that was null and not null for each lab table step
+"Step 2- chem2" good all analytes accounted. 
+"Step 4 - majortrace" good all analytes accounted. 
+"step 6 - mineral" good all analytes accounted. 
+"step 7 - physical" Analyte 2141 no assignment but listed in the script. 1 analyte not accounted. Double check again the origional script. It could have been an accident adding it 
+"step 9 - xray" good all analytes accounted. 
+"step 11 - Calc1" good all analytes accounted. 
+"step 12 - Calc2" good all analytes accounted. 
+"step 13 - Calc3" good all analytes accounted. 
+"step 14 - Calc4" good all analytes accounted. 
+"Step 15 - Calc5" good all analytes accounted. 
+"Step 16 - Calc6" good all analytes accounted. 
+
+** I need to check column names to column names to see if anything is missing as a second check
+** Also need to update the column names for 42 columns
+
+*/
+
+                                  
 
 
 SELECT CASE WHEN COLUMN_NAME IS NULL THEN 1 ELSE 0 END AS Null_Column, 
