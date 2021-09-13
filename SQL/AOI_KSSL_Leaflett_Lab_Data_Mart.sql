@@ -8,11 +8,13 @@ DROP TABLE IF EXISTS #AoiSoilsKSSL ;
 DROP TABLE IF EXISTS #AoiSoilsKSSL;
 DROP TABLE IF EXISTS #AoiSoils2KSSL;
 
- DECLARE @aoiGeom Geometry;
- DECLARE @aoiGeomFixed Geometry;
-  DECLARE @pAoiId INT ;
- DECLARE @intersectedPolygonGeometries table (id int, geom geometry);
- DECLARE @intersectedPolygonGeographies table (id int, geog geography);
+	DECLARE @aoiGeom Geometry;
+	DECLARE @aoiGeomFixed Geometry;
+	DECLARE @pAoiId INT ;
+	DECLARE @intersectedPolygonGeometries table (id int, geom geometry);
+	DECLARE @intersectedPolygonGeographies table (id int, geog geography);
+
+DECLARE @b table(y int, m INT, log_id INT, wss_activity VARCHAR (250),  [state] VARCHAR(30));
 
 
 CREATE TABLE #AoiTableKSSL
@@ -21,7 +23,9 @@ CREATE TABLE #AoiTableKSSL
     aoigeom GEOMETRY )
 
 
-	SELECT @aoiGeom = GEOMETRY::STGeomFromText('MULTIPOLYGON (((-89.65393 43.31269,-89.55711 43.13256,-89.51454 43.19967,-89.44725 43.13206,-89.39095 43.30719,-89.46991 43.30020,-89.49120 43.23720,-89.51866 43.27521,-89.53239 43.23220,-89.57840 43.29170,-89.65393 43.31269)))', 4326); 
+	SELECT @aoiGeom = GEOMETRY::STGeomFromText('MULTIPOLYGON (((-89.62921 43.15060,-89.27181 43.15060,-89.27181 43.33916,-89.62921 43.33916,-89.62921 43.15060)))', 4326); 
+---89.65393 43.31269,-89.55711 43.13256,-89.51454 43.19967,-89.44725 43.13206,-89.39095 43.30719,-89.46991 43.30020,-89.49120 43.23720,-89.51866 43.27521,-89.53239 43.23220,-89.57840 43.29170,-89.65393 43.31269
+	
 SELECT @aoiGeomFixed = @aoiGeom.MakeValid().STUnion(@aoiGeom.STStartPoint()); 
 INSERT INTO #AoiTableKSSL ( landunit, aoigeom )  
 VALUES ('TEMPID1', @aoiGeomFixed); 

@@ -1,7 +1,7 @@
 DECLARE @bounds geometry;
 SET @bounds = geometry::STPolyFromText('POLYGON((-91.57097 43.37706,-91.57097 43.48543,-91.28187 43.48543,-91.28187 43.37706,-91.57097 43.37706))', 4326 );
 
-
+~Declare
 
 DECLARE @b TABLE (Series	VARCHAR(80) NULL, User_pedon_ID VARCHAR(40) NULL ,	pedon_Key INT NULL	,peiid INT NULL,	lat [decimal](12, 9) NULL,	long [decimal](12, 9) NULL,	wmiid  [int]  NOT NULL,	latlong [geometry] NULL);
 
@@ -224,7 +224,7 @@ INSERT INTO @b
 FROM @b AS p1
 INNER JOIN lab_pedon ON lab_pedon.pedon_key=p1.pedon_key
 INNER JOIN lab_layer ON lab_layer.pedon_key=p1.pedon_key
-INNER JOIN lab_chemical_properties AS chem ON chem.labsampnum=lab_layer.labsampnum -- labsampnum will need to be changed to layer_key once the views are updated
+INNER JOIN lab_chemical_properties AS chem ON chem.labsampnum=lab_layer.labsampnum 
 
 
 
