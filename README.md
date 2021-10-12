@@ -14,6 +14,9 @@ Project Pieces
 4. https://github.com/ncss-tech/lab-data-delivery/blob/master/metadata/chemical-column-association.csv
 5. https://github.com/ncss-tech/lab-data-delivery/blob/master/metadata/all-methods.txt
 
+## Documentation
+1. [Geochemical](https://jneme910.github.io/Lab_Data_Mart_Documentation/chapters/Geochemical_layer.html)
+2. 
 ### Data Model
 1. [Soil Data Access Lab Data model Diagram](https://jneme910.github.io/Lab_Data_Mart_Documentation/Documents/SDA_KSSL_Data_model.html)
 
