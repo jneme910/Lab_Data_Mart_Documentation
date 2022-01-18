@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f52079c9ead7407f9d6283c50542895e" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_analysis_procedure_vw" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_analyte" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_area" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_calculations_including_estimates_and_default_values_vw" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_chemical_properties_vw" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_combine_nasis_ncss" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_layer" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_major_and_trace_elements_and_oxides_vw" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_method_code_vw" Width="1.5" PointX="11.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_mineralogy_glass_count_vw" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_pedon" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_physical_properties_vw" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_preparation" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_rosetta_key" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_site" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_webmap_vw" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_xray_and_thermal_vw" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
