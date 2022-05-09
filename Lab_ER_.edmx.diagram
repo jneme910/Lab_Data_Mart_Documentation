@@ -22,6 +22,7 @@
         <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_site" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_webmap_vw" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KSSL_SDA_Schema.lab_xray_and_thermal_vw" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSSL_SDA_Schema.Entity1" Width="1.5" PointX="1.5" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
