@@ -1,9 +1,9 @@
 SET TRANSACTION ISOLATION LEVEL  READ UNCOMMITTED
-USE nasis
+USE SSL_Repo
 GO
 
 DECLARE @SearchStr nvarchar(100)
-SET @SearchStr = 'NASIS 7.4.1'
+SET @SearchStr = 'ncsslabdatamart.sc.egov.usda.gov'
  
  
 
